@@ -3,7 +3,7 @@ import util from 'util';
 import db from '../../src/db.js';
 
 
-// Define Location Table
+// Define User Table
 export class User extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
