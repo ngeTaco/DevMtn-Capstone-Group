@@ -17,7 +17,8 @@ User.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        isAdmin: {
+        // If a user is an admin, like store manager, this must be set to true for that user
+        isAdmin: { 
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },

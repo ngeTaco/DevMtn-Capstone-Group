@@ -38,6 +38,7 @@ Inventory.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        // If an item is a special limited time item, this must be set to true
         isSpecialItem: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
