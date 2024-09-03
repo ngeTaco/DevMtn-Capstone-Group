@@ -4,47 +4,38 @@ import db from '../../src/db.js';
 
 
 // Define User Table
-export class User extends Model {
+export class Shopper extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
     }
 }
 
-User.init(
+Shopper.init(
     {
-        userId: {
+        shopperId: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        isAdmin: {
-            type: DataTypes.BOOLEAN,
+        userId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
-        userName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
-        password: {
-            type: DataTypes.STRING,
+        itemId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
-        firstName: {
+        itemName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        lastName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        points: {
+        shopperQuantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
     {
-        modelName: 'user',
+        modelName: 'shopper',
         sequelize: db,
         timestamps: false,
         updatedAt: false,
