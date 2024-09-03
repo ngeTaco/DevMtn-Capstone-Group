@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function Profile() {
-
-    return (
         <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+
             ---
             Background backdrop, show/hide based on slide-over state.
+
+           
 
             Entering: "ease-in-out duration-500"
             From: "opacity-0"
@@ -14,7 +14,32 @@ function Profile() {
             From: "opacity-100"
             To: "opacity-0"
             ---
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            Entering: "ease-in-out duration-500"
+            From: "opacity-0"
+            To: "opacity-100"
+            Leaving: "ease-in-out duration-500"
+            From: "opacity-100"
+            To: "opacity<!--
+                       
+
+                        Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                        From: "translate-x-full"
+                        To: "translate-x-0"
+                        Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                        From: "translate-x-0"
+                        To: "translate-x-full"
+                        ---
+            ---
+            <div class="fixe<!--
+                           -0 bg-gray-500 bg-opacity-75 transition-opacity" ar
+
+                            Entering: "ease-in-out duration-500"
+                            From: "opacity-0"
+                            To: "opacity-100"
+                            Leaving: "ease-in-out duration-500"
+                            From: "opacity-100"
+                            To: "opacity-0"
+                            ---
 
             <div class="fixed inset-0 overflow-hidden">
                 <div class="absolute inset-0 overflow-hidden">
