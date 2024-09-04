@@ -1,0 +1,182 @@
+[
+    {
+        "userId": 3,
+        "itemId": 1,
+        "itemName": "Pokeball",
+        "shopperQuantity": 500
+    },
+    {
+        "userId": 4,
+        "itemId": 2,
+        "itemName": "Great Ball",
+        "shopperQuantity": 300
+    },
+    {
+        "userId": 5,
+        "itemId": 3,
+        "itemName": "Ultra Ball",
+        "shopperQuantity": 200
+    },
+    {
+        "userId": 6,
+        "itemId": 4,
+        "itemName": "Master Ball",
+        "shopperQuantity": 100
+    },
+    {
+        "userId": 3,
+        "itemId": 5,
+        "itemName": "Potion",
+        "shopperQuantity": 1000
+    },
+    {
+        "userId": 4,
+        "itemId": 6,
+        "itemName": "Super Potion",
+        "shopperQuantity": 800
+    },
+    {
+        "userId": 5,
+        "itemId": 7,
+        "itemName": "Hyper Potion",
+        "shopperQuantity": 600
+    },
+    {
+        "userId": 6,
+        "itemId": 8,
+        "itemName": "Max Potion",
+        "shopperQuantity": 400
+    },
+    {
+        "userId": 3,
+        "itemId": 9,
+        "itemName": "Revive",
+        "shopperQuantity": 200
+    },
+    {
+        "userId": 4,
+        "itemId": 10,
+        "itemName": "Max Revive",
+        "shopperQuantity": 100
+    },
+    {
+        "userId": 5,
+        "itemId": 11,
+        "itemName": "Antidote",
+        "shopperQuantity": 500
+    },
+    {
+        "userId": 6,
+        "itemId": 12,
+        "itemName": "Burn Heal",
+        "shopperQuantity": 400
+    },
+    {
+        "userId": 3,
+        "itemId": 13,
+        "itemName": "Ice Heal",
+        "shopperQuantity": 300
+    },
+    {
+        "userId": 4,
+        "itemId": 14,
+        "itemName": "Awakening",
+        "shopperQuantity": 200
+    },
+    {
+        "userId": 5,
+        "itemId": 15,
+        "itemName": "Paralyze Heal",
+        "shopperQuantity": 300
+    },
+    {
+        "userId": 6,
+        "itemId": 16,
+        "itemName": "Full Heal",
+        "shopperQuantity": 400
+    },
+    {
+        "userId": 3,
+        "itemId": 17,
+        "itemName": "Escape Rope",
+        "shopperQuantity": 500
+    },
+    {
+        "userId": 4,
+        "itemId": 18,
+        "itemName": "Repel",
+        "shopperQuantity": 600
+    },
+    {
+        "userId": 5,
+        "itemId": 19,
+        "itemName": "Super Repel",
+        "shopperQuantity": 700
+    },
+    {
+        "userId": 6,
+        "itemId": 20,
+        "itemName": "Max Repel",
+        "shopperQuantity": 800
+    },
+    {
+        "userId": 3,
+        "itemId": 1,
+        "itemName": "Pokeball",
+        "shopperQuantity": 500
+    },
+    {
+        "userId": 4,
+        "itemId": 2,
+        "itemName": "Great Ball",
+        "shopperQuantity": 300
+    },
+    {
+        "userId": 5,
+        "itemId": 3,
+        "itemName": "Ultra Ball",
+        "shopperQuantity": 200
+    },
+    {
+        "userId": 6,
+        "itemId": 4,
+        "itemName": "Master Ball",
+        "shopperQuantity": 100
+    },
+    {
+        "userId": 3,
+        "itemId": 5,
+        "itemName": "Potion",
+        "shopperQuantity": 1000
+    },
+    {
+        "userId": 4,
+        "itemId": 6,
+        "itemName": "Super Potion",
+        "shopperQuantity": 800
+    },
+    {
+        "userId": 5,
+        "itemId": 7,
+        "itemName": "Hyper Potion",
+        "shopperQuantity": 600
+    },
+    {
+        "userId": 6,
+        "itemId": 8,
+        "itemName": "Max Potion",
+        "shopperQuantity": 400
+    },
+    {
+        "userId": 3,
+        "itemId": 9,
+        "itemName": "Revive",
+        "shopperQuantity": 200
+    },
+    {
+        "userId": 4,
+        "itemId": 10,
+        "itemName": "Max Revive",
+        "shopperQuantity": 100
+    }
+]
