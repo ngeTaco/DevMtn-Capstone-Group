@@ -15,6 +15,9 @@ function App() {
               <li>
                 <Link to="/shop">Shop</Link>
               </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
             </ul>
           </nav>
           <p></p>
