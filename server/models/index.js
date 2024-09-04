@@ -9,7 +9,7 @@ User.belongsToMany(Inventory, {
     foreignKey: { name: 'itemId', field: 'item_id' }
 });
 Inventory.belongsToMany(Shopper, {
-    through: 'ShopperInventory',
+    through: 'History',
     foreignKey: { name: 'userId', field: 'user_id' }
 });
 
