@@ -4,15 +4,15 @@ import db from '../../src/db.js';
 
 
 // Define User Table
-export class Shopper extends Model {
+export class History extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
     }
 }
 
-Shopper.init(
+History.init(
     {
-        shopperId: {
+        historyId: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
@@ -25,17 +25,13 @@ Shopper.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        itemName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         shopperQuantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
     },
     {
-        modelName: 'shopper',
+        modelName: 'history',
         sequelize: db,
         timestamps: false,
         updatedAt: false,

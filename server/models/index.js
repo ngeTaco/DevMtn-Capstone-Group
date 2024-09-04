@@ -1,15 +1,17 @@
 // Import individual models
 import { User } from "./user.model.js";
-import { Shopper } from "./shopper.model.js";
 import { Inventory } from "./inventory.model";
+import { History } from "./history.model.js";
 
 // Define Associations
-User.hasOne(Shopper, { foreignKey: 'userId' });
-Shopper.belongsTo(User, { foreignKey: 'userId' });
-
-//NOTE Discuss if this relationship is needed??
-Shopper.belongsToMany(Inventory, { through: 'ShopperInventory' });
-Inventory.belongsToMany(Shopper, { through: 'ShopperInventory' })
+User.belongsToMany(Inventory, {
+    through: 'History',
+    foreignKey: { name: 'itemId', field: 'item_id' }
+});
+Inventory.belongsToMany(Shopper, {
+    through: 'ShopperInventory',
+    foreignKey: { name: 'userId', field: 'user_id' }
+});
 
 // export
 // export {}
