@@ -6,7 +6,7 @@ import db from '../server/config/db.js'
 import userData from './Data/users.json' assert { type: 'json' };
 import historyData from './Data/shoppers.json' assert { type: 'json' };
 import inventoryData from './Data/inventory.json' assert { type: 'json' };
-import { password } from 'pg/lib/defaults';
+
 
 console.log('Syncing database...');
 await db.sync({ force: true });
@@ -19,7 +19,7 @@ const usersInDB = await Promise.all(
     userData.map((user) => {
         const { isAdmin, userName, password, firstName, lastName, points } = user;
 
-        const newUser = Location.create({
+        const newUser = User.create({
             isAdmin: isAdmin,
             userName: userName,
             password: password,
@@ -33,3 +33,40 @@ const usersInDB = await Promise.all(
 );
 
 console.log('Users seeded successfully!', usersInDB);
+
+// seeding History
+const historiesInDB = await Promise.all(
+    historyData.map((history) => {
+        const { userId, itemId, shopperQuantity } = history;
+
+        const newHistory = History.create({
+            userId: userId,
+            itemId: itemId,
+            shopperQuantity: shopperQuantity,
+        });
+
+        return newHistory;
+    }),
+);
+
+console.log('History seeded successfully!', historiesInDB);
+
+// seeding Inventory
+const itemsInDB = await Promise.all(
+    inventoryData.map((item) => {
+        const { itemName, itemDescription, itemPrice, imageURL, quantity, isSpecialItem } = item;
+
+        const newItem = Item.create({
+        itemName: itemName,
+        itemDescription: itemDescription,
+        itemPrice: itemPrice,
+        imageURL: imageURL,
+        quantity: quantity,
+        isSpecialItem: isSpecialItem
+        });
+
+        return newItem;
+    }),
+);
+
+console.log('Inventory seeded successfully!', itemsInDB);
