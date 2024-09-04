@@ -1,0 +1,50 @@
+[
+    {
+        "isAdmin": true,
+        "userName": "Big Manager",
+        "password": "admin11",
+        "firstName": "Eva",
+        "lastName": "P",
+        "points": 0
+    },
+    {
+        "isAdmin": true,
+        "userName": "Normal Manager",
+        "password": "admin22",
+        "firstName": "Jace",
+        "lastName": "H",
+        "points": 0
+    },
+    {
+        "isAdmin": false,
+        "userName": "Fastest Prest in the West",
+        "password": "pm123",
+        "firstName": "Preston",
+        "lastName": "M",
+        "points": 5000
+    },
+    {
+        "isAdmin": false,
+        "userName": "FairyMary123",
+        "password": "mc123",
+        "firstName": "Mary",
+        "lastName": "C",
+        "points": 8000
+    },
+    {
+        "isAdmin": false,
+        "userName": "AldoSmallThings",
+        "password": "ag123",
+        "firstName": "Aldo",
+        "lastName": "G",
+        "points": 350
+    },
+    {
+        "isAdmin": false,
+        "userName": "Looking for the big old pie in the sky dream",
+        "password": "dh123",
+        "firstName": "Diego",
+        "lastName": "Pie",
+        "points": 0
+    }
+]
