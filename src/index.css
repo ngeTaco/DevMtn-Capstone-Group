@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-/* Example of Tailwind classes */
+/* Example of Tailwind classes
 @layer components { 
     .primary-btn {
         @apply text-lg bg-pokemon-red border border-radius
     }
-}
+} */
