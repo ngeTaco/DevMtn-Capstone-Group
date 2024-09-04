@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Storefront from './Storefront.jsx'
+import Login from './Login.jsx'
 
 
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
       <Route path='profile' element={<ProfilePage/>}/>
       {/* <Route index element={<App/>}/> */}
       <Route path='/shop' element={<Storefront/>}/>
+      <Route path='/login' element={<Login/>}/>
     </Route>
   )
 )
