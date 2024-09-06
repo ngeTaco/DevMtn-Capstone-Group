@@ -4,13 +4,13 @@ import db from '../../server/config/db.js';
 
 
 // Define User Table
-export class History extends Model {
+export class Histories extends Model {
     [util.inspect.custom]() {
         return this.toJSON();
     }
 }
 
-History.init(
+Histories.init(
     {
         historyId: {
             type: DataTypes.INTEGER,

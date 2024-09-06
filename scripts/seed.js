@@ -2,7 +2,7 @@
 import db from '../server/config/db.js'
 // Import models
 import { User, Inventory } from '../server/models/index.js'
-import { History } from '../server/models/history.model.js';
+import { Histories } from '../server/models/history.model.js';
 // Import JSONs for seed data
 import userData from './Data/users.json' assert { type: 'json' };
 import historyData from './Data/history.json' assert { type: 'json' };
@@ -36,11 +36,11 @@ const usersInDB = await Promise.all(
 console.log('Users seeded successfully!', usersInDB);
 
 // seeding History
-const historiesInDB = await Promise.all(
+const historyInDB = await Promise.all(
     historyData.map((history) => {
         const { userId, itemId, shopperQuantity } = history;
 
-        const newHistory = History.create({
+        const newHistory = Histories.create({
             userId: userId,
             itemId: itemId,
             shopperQuantity: shopperQuantity,
@@ -50,18 +50,18 @@ const historiesInDB = await Promise.all(
     }),
 );
 
-console.log('History seeded successfully!', historiesInDB);
+console.log('History seeded successfully!', historyInDB);
 
 // seeding Inventory
 const itemsInDB = await Promise.all(
     inventoryData.map((item) => {
-        const { itemName, itemDescription, itemPrice, imageURL, quantity, isSpecialItem } = item;
+        const { itemName, itemDescription, itemPrice, imageUrl, quantity, isSpecialItem } = item;
 
         const newItem = Inventory.create({
         itemName: itemName,
         itemDescription: itemDescription,
         itemPrice: itemPrice,
-        imageURL: imageURL,
+        imageUrl: imageUrl,
         quantity: quantity,
         isSpecialItem: isSpecialItem
         });
