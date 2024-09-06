@@ -1,17 +1,17 @@
 // Import individual models
 import { User } from "./user.model.js";
-import { Inventory } from "./inventory.model";
-import { History } from "./history.model.js";
+import { Inventory } from "./inventory.model.js";
+
 
 // Define Associations
 User.belongsToMany(Inventory, {
-    through: 'History',
+    through: 'histories',
     foreignKey: { name: 'itemId', field: 'item_id' }
 });
-Inventory.belongsToMany(Shopper, {
-    through: 'History',
+Inventory.belongsToMany(User, {
+    through: 'histories',
     foreignKey: { name: 'userId', field: 'user_id' }
 });
 
 // export
-// export {}
+export { User, Inventory }
