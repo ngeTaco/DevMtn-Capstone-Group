@@ -2,7 +2,7 @@
 import db from '../server/config/db.js'
 // Import models
 import { User, Inventory } from '../server/models/index.js'
-import { Histories } from '../server/models/history.model.js';
+import { History } from '../server/models/history.model.js';
 // Import JSONs for seed data
 import userData from './Data/users.json' assert { type: 'json' };
 import historyData from './Data/history.json' assert { type: 'json' };
@@ -40,7 +40,7 @@ const historyInDB = await Promise.all(
     historyData.map((history) => {
         const { userId, itemId, shopperQuantity } = history;
 
-        const newHistory = Histories.create({
+        const newHistory = History.create({
             userId: userId,
             itemId: itemId,
             shopperQuantity: shopperQuantity,
