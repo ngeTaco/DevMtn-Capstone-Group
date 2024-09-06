@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "init": "createdb storagetracker",
+    "init": "createdb pointshop",
     "seed": "node scripts/seed.js"
   },
   "dependencies": {
