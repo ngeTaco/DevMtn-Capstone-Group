@@ -14,4 +14,4 @@ Inventory.belongsToMany(Shopper, {
 });
 
 // export
-// export {}
+export { User, Inventory }
