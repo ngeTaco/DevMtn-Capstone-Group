@@ -70,3 +70,6 @@ const itemsInDB = await Promise.all(
 );
 
 console.log('Inventory seeded successfully!', itemsInDB);
+
+await db.close();
+console.log('Finished seeding database!');
