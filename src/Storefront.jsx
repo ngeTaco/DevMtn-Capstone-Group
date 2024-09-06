@@ -1,11 +1,10 @@
 import { useState } from "react";
-import React from "react";
-
 
 function Storefront() {
+
     return (
-        <div className="text-3xl font-bold underline">
-            <p>Shop Page</p>
+        <div>
+            <p className="text-3xl font-bold underline"> storefront monke brain please let me pull request</p>
         </div>
     )
 }
