@@ -1,8 +1,7 @@
 // Import Database Connection
 import db from '../server/config/db.js'
 // Import models
-import { User, Inventory } from '../server/models/index.js'
-import { History } from '../server/models/history.model.js';
+import { User, Inventory, History } from '../server/models/index.js'
 // Import JSONs for seed data
 import userData from './Data/users.json' assert { type: 'json' };
 import historyData from './Data/history.json' assert { type: 'json' };
@@ -36,23 +35,6 @@ const usersInDB = await Promise.all(
 
 console.log('Users seeded successfully!', usersInDB);
 
-// seeding History
-const historyInDB = await Promise.all(
-    historyData.map((history) => {
-        const { userId, itemId, shopperQuantity } = history;
-
-        const newHistory = History.create({
-            userId: userId,
-            itemId: itemId,
-            shopperQuantity: shopperQuantity,
-        });
-
-        return newHistory;
-    }),
-);
-
-console.log('History seeded successfully!', historyInDB);
-
 // seeding Inventory
 const itemsInDB = await Promise.all(
     inventoryData.map((item) => {
@@ -72,6 +54,24 @@ const itemsInDB = await Promise.all(
 );
 
 console.log('Inventory seeded successfully!', itemsInDB);
+
+// seeding History
+const historyInDB = await Promise.all(
+    historyData.map((history) => {
+        const { userId, itemId, shopperQuantity } = history;
+
+        const newHistory = History.create({
+            userId: userId,
+            itemId: itemId,
+            shopperQuantity: shopperQuantity,
+        });
+
+        return newHistory;
+    }),
+);
+
+console.log('History seeded successfully!', historyInDB);
+
 
 await db.close();
 console.log('Finished seeding database!');
