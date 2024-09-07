@@ -3,51 +3,65 @@ import { useState } from "react";
 function Storefront() {
 
     return (
-
         <body>
-            <div className="max-w-4xl mx-auto py-10">
-                {/* 3x3 Grid of Tiles */}
-                <div className="grid grid-cols-3 gap-6">
-                    {/* Tile 1 */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 1</p>
+            <section>
+                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
+                    <header>
+                        <h2 className="text-xl text-center font-bold sm:text-3xl ">PokéShop</h2>
+                    </header>
+                    <div className="relative flex py-5">
+                        <div className="flex-grow border-t-2 border-red-600"></div>
                     </div>
-                   {/* Tile 2  */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 2</p>
-                    </div>
-                    {/* Tile 3 */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 3</p>
-                    </div>
-                     {/* Tile 4  */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 4</p>
-                    </div>
-                    {/* Tile 5 */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 5</p>
-                    </div>
-                    {/* Tile 6 */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Product 6</p>
-                    </div>
-                    {/* Special Tile */}
-                    <div className="bg-white shadow-md rounded-lg p-6 text-center">
-                        <div className="h-32 bg-gray-200 rounded-lg"></div>
-                        <p className="mt-4 font-semibold">Special Product</p>
-                    </div>
+                    <ul className="mt-10 grid gap-x-24 sm:grid-cols-2 lg:grid-cols-4">
+                        <li>
+                            <a href="#" className="group block overflow-hidden">
+                                <img
+                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                                    alt=""
+                                    className="h-[250px] w-full object-cover rounded-md "
+                                />
+
+                                <div className="relative bg-white pt-3">
+                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                        Pokéball
+                                    </h3>
+                                    <span className="flex text-right hover:underline hover:underline-offset-2">Add to Cart</span>
+
+                                    <p className="mt-2 flex space-x-40">
+                                        <span className="tracking-wider"> 100 pts </span>
+                                        <span className="tracking-wider">x30</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="group block overflow-hidden">
+                                <img
+                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png"
+                                    alt=""
+                                    className="h-[250px] w-full object-cover rounded-md "
+                                />
+
+                                <div className="relative bg-white pt-3">
+                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                        Great Ball
+                                    </h3>
+                                    <span className="flex text-right hover:underline hover:underline-offset-2">Add to Cart</span>
+
+                                    <p className="mt-2 flex space-x-40">
+                                        <span className="tracking-wider"> 100 pts </span>
+                                        <span className="tracking-wider">x30</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </section>
         </body>
     )
 }
+
 
 
 export default Storefront
