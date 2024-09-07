@@ -16,27 +16,21 @@ function ProfilePage() {
                     <div class="text-center px-14">
                         <h2 class="text-gray-800 text-3xl mb-2 font-bold">Preston Mitchell</h2>
                         <p class="text-gray-400 mb-2hover:text-blue-500">@username</p>
-                        <p><span class="font-semibold">250 </span> Points</p>
-                        <p class="mt-4 mb-8 text-gray-500 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                        <p class="mt-2 mb-8 font-semibold">250 Points</p>
                     </div>
-                    
+
                 </div>
 
 
                 {/* INVENTORY LIST */}
 
-                <hr/>
+                <hr />
                 <h3 class="text-gray-800 text-xl my-4 font-bold text-center">Inventory</h3>
                 <ul role="list" class="divide-y divide-gray-100 ml-20 mr-20">
                     <li class="flex justify-between gap-x-6 py-5">
                         <div class="flex min-w-0 gap-x-4">
                             <div class="min-w-0 flex-auto">
                                 <p class="text-sm font-semibold leading-6 text-gray-900">Item Name</p>
-                            </div>
-                        </div>
-                        <div class="flex min-w-0 gap-x-4">
-                            <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                                <p class="text-sm font-semibold leading-6 text-gray-900">Description</p>
                             </div>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
@@ -50,65 +44,51 @@ function ProfilePage() {
                             </div>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
-                        </div>
-                        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                             <p class="mt-1 text-xs leading-5 text-gray-500">2</p>
                         </div>
                     </li>
                     <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
+                        <div class="flex min-w-0 gap-x-4">
                             <div class="min-w-0 flex-auto">
                                 <p class="mt-1 truncate text-xs leading-5 text-gray-500">Pokemon 2</p>
                             </div>
-                        </div>
-                        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                             <p class="mt-1 text-xs leading-5 text-gray-500">5</p>
                         </div>
                     </li>
                     <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
+                        <div class="flex min-w-0 gap-x-4">
                             <div class="min-w-0 flex-auto">
                                 <p class="mt-1 truncate text-xs leading-5 text-gray-500">Pokemon 3</p>
                             </div>
-                        </div>
-                        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                             <p class="mt-1 text-xs leading-5 text-gray-500">1</p>
                         </div>
                     </li>
                     <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
+                        <div class="flex min-w-0 gap-x-4">
                             <div class="min-w-0 flex-auto">
                                 <p class="mt-1 truncate text-xs leading-5 text-gray-500">Pokemon 4</p>
                             </div>
-                        </div>
-                        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                             <p class="mt-1 text-xs leading-5 text-gray-500">3</p>
                         </div>
                     </li>
                     <li class="flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
+                        <div class="flex min-w-0 gap-x-4">
                             <div class="min-w-0 flex-auto">
                                 <p class="mt-1 truncate text-xs leading-5 text-gray-500">Pokemon 5</p>
                             </div>
-                        </div>
-                        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
                         </div>
                         <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                             <p class="mt-1 text-xs leading-5 text-gray-500">6</p>
                         </div>
                     </li>
                 </ul>
+
             </div>
         </div>
     )
