@@ -43,6 +43,10 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        profileImage: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
     },
     {
         modelName: 'user',
