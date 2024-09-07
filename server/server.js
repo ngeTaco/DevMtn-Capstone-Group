@@ -33,15 +33,36 @@ app.get('/api/user/:userId', async (req, res) => {
     res.json(user);
 })
 
-// get history by userId
-// app.get('', async (req, res) => {
-//     const { userId } = req.params;
-//     const userHistory = await History.Find
-// })
+// get history by userId including Inventory information ordered by newest first
+app.get('/api/history/:userId', async (req, res) => {
+    const { userId } = req.params;
+    const userHistory = await History.findAll({
+        where: { userId: `${userId}` },
+        include: Inventory,
+        order: [['historyId', 'DESC']]
+    });
+    res.json(userHistory);
+})
 
 // get inventory for regular items
+app.get('/api/inventory/regular', async (req, res) => {
+    const regInventory = await Inventory.findAll({
+        where: { isSpecialItem: false },
+        order: [['itemId', 'ASC']]
+    });
+    res.json(regInventory);
+})
+
 // get inventory for special items
-// get special item with non-zero quantity
+app.get('/api/inventory/special', async (req, res) => {
+    const specInventory = await Inventory.findAll({
+        where: { isSpecialItem: true },
+        order: [['itemId', 'ASC']]
+    });
+    res.json(specInventory);
+})
+
+//NEW get special item with non-zero quantity
 
 
 // GET ALL of db items (for debugging)
