@@ -21,6 +21,9 @@ function App() {
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
+              <li>
+                <Link to="/admin">Admin</Link>
+              </li>
             </ul>
           </nav>
           <p></p>
