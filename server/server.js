@@ -6,6 +6,7 @@ import ViteExpress from "vite-express"
 import 'dotenv/config'
 // Models
 import { User, Inventory, History } from "./models/index.js"
+import { Op } from "sequelize";
 
 const app = express();
 const PORT = 5090;
@@ -62,8 +63,17 @@ app.get('/api/inventory/special', async (req, res) => {
     res.json(specInventory);
 })
 
-//NEW get special item with non-zero quantity
-
+// get first special item with non-zero quantity
+app.get('/api/inventory/special/instock', async (req, res) => {
+    const specStockInventory = await Inventory.findOne({
+        where: {
+            isSpecialItem: true,
+            quantity: { [Op.gt]: 0 }
+        },
+        order: [['itemId', 'ASC']]
+    });
+    res.json(specStockInventory);
+})
 
 // GET ALL of db items (for debugging)
 // Get all users including their inventory history
