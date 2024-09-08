@@ -7,7 +7,7 @@ function App() {
 
     return (
         <div>
-          <nav>
+          <nav className="flex space-x-4 px-8">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -17,6 +17,9 @@ function App() {
               </li>
               <li>
                 <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
           </nav>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// make greys more cubical, press the special product elsewhere 
+
 function Storefront() {
 
     return (
@@ -61,7 +63,5 @@ function Storefront() {
         </body>
     )
 }
-
-
 
 export default Storefront

@@ -7,6 +7,7 @@ import './index.css'
 import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Storefront from './Storefront.jsx'
 import Login from './Login.jsx'
+import ProfilePage from './Profile.jsx'
 
 
 const router = createBrowserRouter(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<App />}>
       <Route path='/shop' element={<Storefront/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
     </Route>
   )
 )
