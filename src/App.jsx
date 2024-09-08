@@ -7,7 +7,7 @@ function App() {
 
     return (
         <div>
-          <nav className="flex items-center justify-between space-x-6 text-[18px]">
+          <nav className="flex space-x-4 px-8">
             <ul>
               <li>
                 <Link to="/">Home</Link>
