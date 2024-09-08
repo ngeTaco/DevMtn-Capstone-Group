@@ -27,7 +27,7 @@ function Storefront() {
                                     </h3>
                                     <span className="flex text-right hover:underline hover:underline-offset-2">Add to Cart</span>
 
-                                    <p className="mt-2 flex space-x-40">
+                                    <p className="mt-2 flex space-x-32">
                                         <span className="tracking-wider"> 100 pts </span>
                                         <span className="tracking-wider">x30</span>
                                     </p>
@@ -50,7 +50,7 @@ function Storefront() {
 
                                     <p className="mt-2 flex space-x-40">
                                         <span className="tracking-wider"> 100 pts </span>
-                                        <span className="tracking-wider">x30</span>
+                                        <span className="tracking-wider"> x30</span>
                                     </p>
                                 </div>
                             </a>
