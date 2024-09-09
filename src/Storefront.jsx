@@ -14,124 +14,144 @@ function Storefront() {
                     <div className="relative flex py-5">
                         <div className="flex-grow border-t-2 border-red-600"></div>
                     </div>
-                    <ul className="mt-10 grid gap-x-24 sm:grid-cols-2 lg:grid-cols-3">
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+                    <ul className="mt-10 grid gap-x-24 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "/>
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
-
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+
+
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "
-                                />
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
-
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "/>
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
-
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "/>
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
-
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "/>
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
-
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" className="group block overflow-hidden">
+                        <li className="group block overflow-hidden border border-gray-400 rounded-md">
+                            <a href="#" className="block overflow-hidden">
                                 <img
                                     src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
                                     alt=""
-                                    className="h-[250px] w-full object-cover rounded-md "/>
-                                <div className="relative bg-white pt-3">
-                                    <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
-                                        Pokéball
-                                    </h3>
-                                    <span className="flex float-right hover:underline hover:underline-offset-2">Add to Cart</span>
+                                    className="h-[250px] w-full object-cover rounded-t-md " />
 
-                                    <p className="mt-2 flex space-x-32">
-                                        <span className="mt-7"> 100pts</span>
-                                        <span className="mt-7">x30</span>
-                                    </p>
+                                <div className="relative bg-white p-3">
+                                    <div className="flex justify-between items-center">
+                                        <h3 className="text-lg group-hover:underline group-hover:underline-offset-2">
+                                            Pokéball
+                                        </h3>
+                                        <span className="text-blue-500 hover:underline hover:underline-offset-2">
+                                            Add to Cart
+                                        </span>
+                                    </div>
+                                    <div className="flex justify-between mt-5">
+                                        <span className="text-gray-700">100pts</span>
+                                        <span className="text-gray-700">x30</span>
+                                    </div>
                                 </div>
                             </a>
                         </li>
