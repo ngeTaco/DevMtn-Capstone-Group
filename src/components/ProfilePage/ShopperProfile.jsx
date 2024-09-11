@@ -11,9 +11,8 @@ function ShopperProfile() {
             <div class="user-info">
                 <div class="text-center px-14">
                     <h2 class="text-gray-800 text-3xl mb-2 font-bold">Preston Mitchell</h2>
-                    <p class="text-gray-400 mb-2hover:text-blue-500">@username</p>
-                    <p><span class="font-semibold">250 </span> Points</p>
-                    <p class="mt-4 mb-8 text-gray-500 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    <p class="mb-3 text-gray-400 mb-2hover:text-blue-500">@username</p>
+                    <p class="mb-5"><span class="font-semibold">250 </span> Points</p>
                 </div>
 
             </div>

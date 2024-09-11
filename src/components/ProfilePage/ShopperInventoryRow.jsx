@@ -9,9 +9,6 @@ function ShopperInventoryRow() {
                         </div>
                     </div>
                     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                        <p class="mt-1 text-xs leading-5 text-gray-500">This pokemon is really cool.</p>
-                    </div>
-                    <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                         <p class="mt-1 text-xs leading-5 text-gray-500">2</p>
                     </div>
                 </li>
