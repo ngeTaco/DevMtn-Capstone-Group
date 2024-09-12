@@ -8,6 +8,7 @@ import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } 
 import Storefront from './Storefront.jsx'
 import Login from './Login.jsx'
 import ProfilePage from './Profile.jsx'
+import AdminInventory from './AdminInventory.jsx'
 
 
 const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route path='/shop' element={<Storefront/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/profile' element={<ProfilePage/>}/>
+      <Route path='/admin' element={<AdminInventory/>}/>
     </Route>
   )
 )
