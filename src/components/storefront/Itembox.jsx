@@ -1,3 +1,7 @@
+import Addcart from "../itembox components/addcart"
+import ItemName from "../itembox components/ItemName"
+import Points from "../itembox components/points"
+import Stock from "../itembox components/stock"
 
 function Itembox() {
 
@@ -14,16 +18,12 @@ function Itembox() {
 
                     <div className="relative bg-white p-3">
                         <div className="flex justify-between items-center">
-                            <h3 className="text-lg">
-                                Pokéball
-                            </h3>
-                            <span className="text-blue-500 hover:underline hover:underline-offset-2">
-                                Add to Cart
-                            </span>
+                            <ItemName />
+                            <Addcart />
                         </div>
                         <div className="flex justify-between mt-5">
-                            <span className="text-gray-700">100pts</span>
-                            <span className="text-gray-700">x30</span>
+                            <Points />
+                            <Stock />
                         </div>
                     </div>
                 </a>
