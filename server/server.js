@@ -1,12 +1,13 @@
-// Middleware
+// Packages
 import express from "express"
 import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express"
-import 'dotenv/config'
-// Models
-import { User, Inventory, History } from "./models/index.js"
 import { Op } from "sequelize";
+// Utilities
+import 'dotenv/config'
+import appRouter from "./routes/index.js";
+import { User, Inventory, History } from "./models/index.js"
 
 const app = express();
 const PORT = 5090;
@@ -25,6 +26,8 @@ app.use(session({
     saveUninitialized: true,
     resave: false,
 }))
+
+app.use(appRouter);
 
 // GET Endpoints for all data sets
 // Get single user by userId
@@ -73,33 +76,6 @@ app.get('/api/inventory/special/instock', async (req, res) => {
         order: [['itemId', 'ASC']]
     });
     res.json(specStockInventory);
-})
-
-// GET ALL of db items (for debugging)
-// Get all users including their inventory history
-app.get('/api/all/users', async (req, res) => {
-    const allUsers = await User.findAll({
-        order: [['userId', 'ASC']],
-        include: History
-    });
-    res.json(allUsers);
-})
-
-// Get all histories with item details for each item
-app.get('/api/all/history', async (req, res) => {
-    const allHistory = await History.findAll({
-        order: [['userId', 'ASC']],
-        include: Inventory
-    });
-    res.json(allHistory);
-})
-
-// Get all inventory with no filtering
-app.get('/api/all/inventory', async (req, res) => {
-    const allInventory = await Inventory.findAll({
-        order: [['itemId', 'ASC']]
-    });
-    res.json(allInventory);
 })
 
 ViteExpress.listen(app, PORT, () => {

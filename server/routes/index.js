@@ -1,11 +1,15 @@
+// Packages
 import { Router } from "express";
-import authRoutes from "./auth.routes";
-// Import all routes
-
+// Routes
+import testRouter from "./tests.routes.js";
+//import authRoutes from "./auth.routes.js";
 
 const appRouter = Router();
-appRouter.use ('/api/auth', authRoutes)
 
-// attach to appRouter
+
+//appRouter.use ('/api/auth', authRoutes)
+
+appRouter.use('/api/all', testRouter);
+
 
 export default appRouter;
