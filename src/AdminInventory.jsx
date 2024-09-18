@@ -12,6 +12,7 @@ function AdminInventory() {
                 <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Description</th>
                 <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Price</th>
                 <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Quantity</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Is Special</th>
                 <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider"></th>
               </tr>
             </thead>
@@ -22,6 +23,7 @@ function AdminInventory() {
                 <td className="px-6 py-4 text-sm text-gray-500">This item is cool item</td>
                 <td className="px-6 py-4 text-sm text-gray-500">$15.00</td>
                 <td className="px-6 py-4 text-sm text-gray-500">4</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
               <tr className="hover:bg-gray-50">
@@ -30,6 +32,7 @@ function AdminInventory() {
                 <td className="px-6 py-4 text-sm text-gray-500">Recruiting Manager</td>
                 <td className="px-6 py-4 text-sm text-gray-500">2/12/2021</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Maroon</td>
+                <td className="px-6 py-4 text-sm text-gray-500">True</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
               <tr className="hover:bg-gray-50">
@@ -38,47 +41,61 @@ function AdminInventory() {
                 <td className="px-6 py-4 text-sm text-gray-500">Web Developer IV</td>
                 <td className="px-6 py-4 text-sm text-gray-500">5/31/2020</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Purple</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="overflow-x-auto bg-white shadow-sm rounded-lg mx-10">
-          <h2 className="mb-5 font-bold">Special Items</h2>
-          <table className="min-w-full bg-white divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Id</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Name</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Description</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Price</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider">Quantity</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-900 uppercase tracking-wider"></th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
               <tr className="hover:bg-gray-50">
-                <th className="px-6 py-4 text-sm text-gray-500">1</th>
+                <th className="px-6 py-4 text-sm text-gray-500">4</th>
                 <td className="px-6 py-4 text-sm text-gray-500">Cy Ganderton</td>
                 <td className="px-6 py-4 text-sm text-gray-500">This item is cool item</td>
                 <td className="px-6 py-4 text-sm text-gray-500">$15.00</td>
                 <td className="px-6 py-4 text-sm text-gray-500">4</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
               <tr className="hover:bg-gray-50">
-                <th className="px-6 py-4 text-sm text-gray-500">2</th>
+                <th className="px-6 py-4 text-sm text-gray-500">5</th>
                 <td className="px-6 py-4 text-sm text-gray-500">Sophi Biles</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Recruiting Manager</td>
                 <td className="px-6 py-4 text-sm text-gray-500">2/12/2021</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Maroon</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
               <tr className="hover:bg-gray-50">
-                <th className="px-6 py-4 text-sm text-gray-500">3</th>
+                <th className="px-6 py-4 text-sm text-gray-500">6</th>
                 <td className="px-6 py-4 text-sm text-gray-500">Florida Garces</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Web Developer IV</td>
                 <td className="px-6 py-4 text-sm text-gray-500">5/31/2020</td>
                 <td className="px-6 py-4 text-sm text-gray-500">Purple</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
+                <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <th className="px-6 py-4 text-sm text-gray-500">7</th>
+                <td className="px-6 py-4 text-sm text-gray-500">Florida Garces</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Web Developer IV</td>
+                <td className="px-6 py-4 text-sm text-gray-500">5/31/2020</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Purple</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
+                <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <th className="px-6 py-4 text-sm text-gray-500">8</th>
+                <td className="px-6 py-4 text-sm text-gray-500">Florida Garces</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Web Developer IV</td>
+                <td className="px-6 py-4 text-sm text-gray-500">5/31/2020</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Purple</td>
+                <td className="px-6 py-4 text-sm text-gray-500">False</td>
+                <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <th className="px-6 py-4 text-sm text-gray-500">9</th>
+                <td className="px-6 py-4 text-sm text-gray-500">Florida Garces</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Web Developer IV</td>
+                <td className="px-6 py-4 text-sm text-gray-500">5/31/2020</td>
+                <td className="px-6 py-4 text-sm text-gray-500">Purple</td>
+                <td className="px-6 py-4 text-sm text-gray-500">True</td>
                 <td><img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></td>
               </tr>
             </tbody>
