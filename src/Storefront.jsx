@@ -6,11 +6,11 @@ import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
 // make greys more cubical, press the special product elsewhere 
 
 function Storefront() {
+    const [isOpen, setIsOpen] = useState(true)
 
 
 
 
-    
     return (
         <body>
             <section className="">
@@ -19,8 +19,8 @@ function Storefront() {
                     <div className="relative flex py-5">
                         <div className="flex-grow border-t-2 border-red-600"></div>
                     </div>
-                    
-                    <div className="mt-10 grid gap-x-24 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
+
+                    <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                         {/* Grid Start + item1 */}
                         <Itembox />
                         <Itembox />
@@ -28,18 +28,22 @@ function Storefront() {
                         <Itembox />
                         <Itembox />
                         <Itembox />
-                        
-                    {/* Special Item */}       
-                </div>
-                <div className="mt-44">
+
+                        {/* Special Item */}
+                    </div>
+                    <div className="mt-44 gap-x-12">
                         <Specialbox />
-                        <ItemboxModal/>
+                        <ItemboxModal
+                            isOpen={isOpen}
+                            setIsOpen={setIsOpen}
+                            item={'item'}
+                        />
                     </div>
                 </div>
             </section>
         </body>
-        
-       
+
+
     )
 }
 
