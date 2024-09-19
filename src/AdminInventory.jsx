@@ -1,10 +1,25 @@
 import AdminInventoryRow from "./components/AdminInventoryPage/AdminInventoryRow.jsx";
 import AdminInventoryTable from "./components/AdminInventoryPage/AdminInventoryTable.jsx";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 function AdminInventory() {
+
+  const [allItems, setAllItems] = useState([]);
+
+  useEffect(() => {
+    const requestItems = axios.get('/api/all/inventory').then(({ data }) => {
+      setAllItems(data)
+    })
+  },
+    []
+  )
   return (
-    <div class="flex gap-6">
-      < AdminInventoryTable />
+    <div className="flex gap-6">
+      < AdminInventoryTable
+        allItems={allItems}
+      />
       <div className="overflow-x-auto bg-white mx-10 my-16 shadow-sm rounded-lg p-6">
         <h2 className="mb-5 font-bold text-gray-900">Add New Item</h2>
         <form className="space-y-4">

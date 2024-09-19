@@ -1,6 +1,7 @@
 import AdminInventoryRow from "./AdminInventoryRow"
 
-function AdminInventoryTable() {
+function AdminInventoryTable(props) {
+    console.log(props.allItems)
     return (
         <div>
         <div className="overflow-x-auto bg-white mx-10 my-16 shadow-sm rounded-lg">
@@ -18,15 +19,16 @@ function AdminInventoryTable() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
-              <AdminInventoryRow />
+                {props.allItems.map( (item)=> {
+                    console.log(item)
+                    return (
+                        <AdminInventoryRow 
+                        item={item}
+                        key={item.itemId}
+                        />
+                    )
+                }
+                )}
             </tbody>
           </table>
         </div>
