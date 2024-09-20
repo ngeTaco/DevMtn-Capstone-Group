@@ -3,9 +3,9 @@ import db from '../server/config/db.js'
 // Import models
 import { User, Inventory, History } from '../server/models/index.js'
 // Import JSONs for seed data
-import userData from './Data/users.json' assert { type: 'json' };
-import historyData from './Data/history.json' assert { type: 'json' };
-import inventoryData from './Data/inventory.json' assert { type: 'json' };
+import userData from './Data/users.json' with { type: 'json' };
+import historyData from './Data/history.json' with { type: 'json' };
+import inventoryData from './Data/inventory.json' with { type: 'json' };
 
 
 console.log('Syncing database...');
@@ -33,7 +33,7 @@ const usersInDB = await Promise.all(
     }),
 );
 
-console.log('Users seeded successfully!', usersInDB);
+// console.log('Users seeded successfully!', usersInDB);
 
 // seeding Inventory
 const itemsInDB = await Promise.all(
@@ -70,7 +70,7 @@ const historyInDB = await Promise.all(
     }),
 );
 
-console.log('History seeded successfully!', historyInDB);
+// console.log('History seeded successfully!', historyInDB);
 
 
 await db.close();
