@@ -1,11 +1,28 @@
-import { Router } from "express";
+// Middleware
+import { Router } from 'express';
+import { loginRequired } from '../middlewares/auth.middleware.js';
+// Models
+import { User } from "../models/index.js"
 
 const authRoutes = Router();
 
-// Setup routes
-authRoutes.post('/logout', (req, res) = {
+// LOGIN for User
+authRoutes.post('/login', async (req, res) => {
+    const { userName, password } = req.body;
+    const user = await User.findOne({ where: { userName: userName } });
 
-    
+    if (user && user.password === password) {
+        req.session.userId = user.userId;
+        res.json({ success: true });
+    } else {
+        res.json({ success: false });
+    }
+});
+
+// LOGOUT for User
+authRoutes.post('/logout', loginRequired, (req, res) => {
+    req.session.destroy();
+    res.json({ success: true });
 })
 
 export default authRoutes
