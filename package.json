@@ -7,7 +7,9 @@
     "dev": "nodemon server/server.js -w server/server.js -w server -w src",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "init": "dropdb --if-exists pointshop && createdb pointshop",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
     "aspect-ratio": "^2.1.5",

@@ -3,7 +3,7 @@
         "itemName": "Pokeball",
         "itemDescription": "A tool used for catching wild POKéMON.",
         "itemPrice": 200,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png",
         "quantity": "200",
         "isSpecialItem": false
     },
@@ -11,7 +11,7 @@
         "itemName": "Great Ball",
         "itemDescription": "A high-performance POKé BALL that provides a higher catch rate than a standard POKé BALL.",
         "itemPrice": 600,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png",
         "quantity": "150",
         "isSpecialItem": false
     },
@@ -19,7 +19,7 @@
         "itemName": "Ultra Ball",
         "itemDescription": "An ultra-high-performance POKé BALL that provides a higher catch rate than a GREAT BALL.",
         "itemPrice": 1200,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png",
         "quantity": "100",
         "isSpecialItem": false
     },
@@ -27,7 +27,7 @@
         "itemName": "Master Ball",
         "itemDescription": "The best BALL with the ultimate level of performance. It will catch any wild POKéMON without fail.",
         "itemPrice": 0,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
         "quantity": "1",
         "isSpecialItem": true
     },
@@ -35,7 +35,7 @@
         "itemName": "Potion",
         "itemDescription": "A spray-type medicine for treating wounds. It restores the HP of one POKéMON by 20 points.",
         "itemPrice": 300,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/potion.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/potion.png",
         "quantity": "50",
         "isSpecialItem": false
     },
@@ -43,7 +43,7 @@
         "itemName": "Super Potion",
         "itemDescription": "A spray-type medicine for treating wounds. It restores the HP of one POKéMON by 50 points.",
         "itemPrice": 700,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/super-potion.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/super-potion.png",
         "quantity": "30",
         "isSpecialItem": false
     },
@@ -51,7 +51,7 @@
         "itemName": "Hyper Potion",
         "itemDescription": "A spray-type medicine for treating wounds. It restores the HP of one POKéMON by 200 points.",
         "itemPrice": 1200,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hyper-potion.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hyper-potion.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -59,7 +59,7 @@
         "itemName": "Max Potion",
         "itemDescription": "A spray-type medicine for treating wounds. It completely restores the HP of one POKéMON.",
         "itemPrice": 2500,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-potion.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-potion.png",
         "quantity": "10",
         "isSpecialItem": false
     },
@@ -67,7 +67,7 @@
         "itemName": "Revive",
         "itemDescription": "A medicine that can revive fainted POKéMON. It also restores half of a fainted POKéMON's maximum HP.",
         "itemPrice": 1500,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/revive.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/revive.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -75,7 +75,7 @@
         "itemName": "Max Revive",
         "itemDescription": "A medicine that can revive fainted POKéMON. It also fully restores a fainted POKéMON's maximum HP.",
         "itemPrice": 4000,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-revive.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-revive.png",
         "quantity": "10",
         "isSpecialItem": true
     },
@@ -83,7 +83,7 @@
         "itemName": "Antidote",
         "itemDescription": "A spray-type medicine. It lifts the effect of poison from one POKéMON.",
         "itemPrice": 100,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/antidote.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/antidote.png",
         "quantity": "30",
         "isSpecialItem": false
     },
@@ -91,7 +91,7 @@
         "itemName": "Paralyze Heal",
         "itemDescription": "A spray-type medicine. It eliminates paralysis from one POKéMON.",
         "itemPrice": 200,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/paralyze-heal.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/paralyze-heal.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -99,7 +99,7 @@
         "itemName": "Awakening",
         "itemDescription": "A spray-type medicine. It awakens one POKéMON from the clutches of sleep.",
         "itemPrice": 200,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/awakening.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/awakening.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -107,7 +107,7 @@
         "itemName": "Burn Heal",
         "itemDescription": "A spray-type medicine. It heals a single POKéMON that has been burned.",
         "itemPrice": 250,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/burn-heal.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/burn-heal.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -115,7 +115,7 @@
         "itemName": "Ice Heal",
         "itemDescription": "A spray-type medicine. It defrosts a single POKéMON that has been frozen solid.",
         "itemPrice": 250,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-heal.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-heal.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -123,7 +123,7 @@
         "itemName": "Full Heal",
         "itemDescription": "A spray-type medicine. It heals all the status problems of a single POKéMON.",
         "itemPrice": 600,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/full-heal.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/full-heal.png",
         "quantity": "10",
         "isSpecialItem": false
     },
@@ -131,7 +131,7 @@
         "itemName": "Escape Rope",
         "itemDescription": "A long, durable rope. Use it to escape instantly from locations like caves or dungeons.",
         "itemPrice": 550,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/escape-rope.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/escape-rope.png",
         "quantity": "10",
         "isSpecialItem": false
     },
@@ -139,7 +139,7 @@
         "itemName": "Repel",
         "itemDescription": "An item that prevents weak wild POKéMON from appearing for 100 steps after its use.",
         "itemPrice": 350,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/repel.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/repel.png",
         "quantity": "20",
         "isSpecialItem": false
     },
@@ -147,7 +147,7 @@
         "itemName": "Super Repel",
         "itemDescription": "An item that prevents weak wild POKéMON from appearing for 200 steps after its use.",
         "itemPrice": 500,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/super-repel.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/super-repel.png",
         "quantity": "15",
         "isSpecialItem": false
     },
@@ -155,7 +155,7 @@
         "itemName": "Max Repel",
         "itemDescription": "An item that prevents weak wild POKéMON from appearing for 250 steps after its use.",
         "itemPrice": 700,
-        "imageURL": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-repel.png",
+        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-repel.png",
         "quantity": "10",
         "isSpecialItem": false
     }

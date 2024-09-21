@@ -21,6 +21,6 @@ async function connectToDB(dbURI) {
     return sequelize;
 }
 
-const db = await connectToDB('postgresql:///whatAreWeNamingThis');
+const db = await connectToDB('postgresql:///pointshop');
 
 export default db;

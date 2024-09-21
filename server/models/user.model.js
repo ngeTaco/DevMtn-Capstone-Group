@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import util from 'util';
-import db from '../../src/db.js';
+import db from '../../server/config/db.js';
 
 
 // Define User Table
@@ -42,6 +42,10 @@ User.init(
         points: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        profileImage: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
     {
