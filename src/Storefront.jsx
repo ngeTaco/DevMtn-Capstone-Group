@@ -9,8 +9,6 @@ function Storefront() {
     const [isOpen, setIsOpen] = useState(true)
 
 
-
-
     return (
         <body>
             <section className="">

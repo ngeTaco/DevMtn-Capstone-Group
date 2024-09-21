@@ -35,6 +35,19 @@ export default function globalReducer(state = initialState, action) {
                 ...state,
                 allItems: action.payload
             }
+        case "HANDLE_MODAL" :
+        console.log(action.payload)
+        return {
+            ...state,
+            itemModal: action.payload
+        }
+        case "HANDLE_SPECIAL_MODAL":
+        console.log(action.payload)
+        return {   
+            ...state,
+            itemModal: action.payload
+
+        }
         default:
             return state
     }

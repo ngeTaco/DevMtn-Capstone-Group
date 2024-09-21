@@ -1,11 +1,29 @@
 import ItemName from "../itembox components/ItemName";
 import Points from "../itembox components/points";
 import Stock from "../itembox components/stock";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
 
 
 function ItemboxModal(props) {
-  const { isOpen, setIsOpen, item } = props
-  if (!isOpen) return null;
+  const dispatch = useDispatch()
+
+  function modalOpen () {
+    console.log('opened')
+    dispatch({
+      type:`HANDLE_MODAL`,
+      payload: false
+    })
+  }
+  
+  const itemModal = useSelector((accessState) => {
+    return (accessState.globalState.itemModal)
+    
+  }) 
+  console.log(itemModal)
+  if (!itemModal) return null
+  
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -13,7 +31,7 @@ function ItemboxModal(props) {
         <div className="flex justify-end">
           <button
             className="text-gray-500 hover:text-gray-700 focus:outline-none"
-            onClick={() => setIsOpen(false)}
+            onClick={modalOpen}
           >
             &times;
           </button>
