@@ -35,4 +35,16 @@ historyRouter.post('/new', async (req, res) => {
     res.json(newHistory);
 })
 
+// DELETE delete history line by historyId
+historyRouter.delete('/:historyId', async (req, res) => {
+    const { historyId } = req.params;
+    const historyRemove = await History.findByPk(historyId);
+
+    if (historyRemove) {
+        await History.destroy({ where: { historyId: historyId } });
+        return res.status(200).json({ message: 'History Line Removed' });
+    }
+    return res.status(400).json({ error: 'History Not Found' });
+})
+
 export default historyRouter;

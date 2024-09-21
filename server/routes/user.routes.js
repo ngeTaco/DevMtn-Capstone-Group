@@ -38,4 +38,16 @@ userRouter.post('/new', async (req, res) => {
     res.json(newUser);
 })
 
+// DELETE delete user by userId
+userRouter.delete('/:userId', async (req, res) => {
+    const { userId } = req.params;
+    const userRemove = await User.findByPk(userId);
+
+    if (userRemove) {
+        await User.destroy({ where: { userId: userId } });
+        return res.status(200).json({ message: 'User Removed' });
+    }
+    return res.status(400).json({ error: 'User Not Found' });
+})
+
 export default userRouter;

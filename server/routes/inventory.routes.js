@@ -61,4 +61,16 @@ inventoryRouter.post('/new', async (req, res) => {
     res.json(newItem);
 })
 
+// DELETE inventory item by itemId
+inventoryRouter.delete('/:itemId', async (req, res) => {
+    const { itemId } = req.params;
+    const itemRemove = await Inventory.findByPk(itemId);
+
+    if (itemRemove) {
+        await Inventory.destroy({ where: { itemId: itemId } });
+        return res.status(200).json({ message: 'Inventory Item Removed' });
+    }
+    return res.status(400).json({ error: 'Inventory Item Not Found' });
+})
+
 export default inventoryRouter;
