@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function AdminInventoryAddItem() {
 
@@ -12,17 +12,26 @@ function AdminInventoryAddItem() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("handleSubmit")
+        console.dir(itemPriceRef.current.value)
         const formData =
         {
             itemName: itemName.current.value,
             itemPrice: itemPrice.current.value,
             itemQuantity: itemQuantity.current.value,
             itemDescription: itemDescription.current.value,
-            isSpecial: isSpecial.current.value
+            isSpecial: isSpecial.current.checked
         }
     }
     ////ADD REFS TO EACH OF THE ITEMS////
+
+    const itemNameRef = useRef(null);
+    const itemPriceRef = useRef(null);
+    const itemQuantityRef = useRef(null);
+    const itemDescriptionRef = useRef(null);
+    const isSpecialRef = useRef(null);
+
+    
+
     return (
         <div className="overflow-x-auto bg-white mx-10 my-16 shadow-sm rounded-lg p-6">
             <h2 className="mb-5 font-bold text-gray-900">Add New Item</h2>
@@ -32,6 +41,7 @@ function AdminInventoryAddItem() {
                     <input
                         type="text"
                         id="itemName"
+                        ref={itemNameRef}
                         name="itemName"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
                         placeholder="Enter item name"
@@ -42,6 +52,7 @@ function AdminInventoryAddItem() {
                     <input
                         type="number"
                         id="itemPrice"
+                        ref={itemPriceRef}
                         name="itemPrice"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
                         placeholder="Enter item price"
@@ -52,6 +63,7 @@ function AdminInventoryAddItem() {
                     <input
                         type="number"
                         id="itemQuantity"
+                        ref={itemQuantityRef}
                         name="itemQuantity"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
                         placeholder="Enter item quantity"
@@ -61,6 +73,7 @@ function AdminInventoryAddItem() {
                     <label className="block text-sm font-medium text-gray-900 mb-1" htmlFor="itemDescription">Item Description</label>
                     <textarea
                         id="itemDescription"
+                        ref={itemDescriptionRef}
                         name="itemDescription"
                         rows="4"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
@@ -68,7 +81,12 @@ function AdminInventoryAddItem() {
                     ></textarea>
                 </div>
                 <div>
-                    <input type="checkbox" id="special" name="special" className="mr-2" />
+                    <input 
+                        type="checkbox" 
+                        id="special" 
+                        ref={isSpecialRef}
+                        name="special" 
+                        className="mr-2" />
                     <label className=" text-sm font-medium text-gray-900" htmlFor="special">Is Special</label>
                 </div>
                 <div>
