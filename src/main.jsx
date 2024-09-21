@@ -9,15 +9,17 @@ import Storefront from './Storefront.jsx'
 import Login from './Login.jsx'
 import ProfilePage from './Profile.jsx'
 import AdminInventory from './AdminInventory.jsx'
+import globalStore from './store/store.js'
+import { Provider } from 'react-redux'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
-      <Route path='/shop' element={<Storefront/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/profile' element={<ProfilePage/>}/>
-      <Route path='/admin' element={<AdminInventory/>}/>
+      <Route path='/shop' element={<Storefront />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/profile' element={<ProfilePage />} />
+      <Route path='/admin' element={<AdminInventory />} />
     </Route>
   )
 )
@@ -25,7 +27,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-    </RouterProvider>
+    < Provider store={globalStore}>
+      <RouterProvider router={router}>
+      </RouterProvider>
+    </Provider>
   </React.StrictMode>,
 )

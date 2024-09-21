@@ -1,6 +1,12 @@
+import { isAllOf } from '@reduxjs/toolkit';
 import { useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function AdminInventoryAddItem() {
+
+    const dispatch = useDispatch()
+
 
     const [addingItem, setAddingItem] = useState({
         itemName: "",
@@ -12,6 +18,7 @@ function AdminInventoryAddItem() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+       
         console.dir(itemPriceRef.current.value)
         const formData =
         {
@@ -30,7 +37,7 @@ function AdminInventoryAddItem() {
     const itemDescriptionRef = useRef(null);
     const isSpecialRef = useRef(null);
 
-    
+
 
     return (
         <div className="overflow-x-auto bg-white mx-10 my-16 shadow-sm rounded-lg p-6">
@@ -81,11 +88,11 @@ function AdminInventoryAddItem() {
                     ></textarea>
                 </div>
                 <div>
-                    <input 
-                        type="checkbox" 
-                        id="special" 
+                    <input
+                        type="checkbox"
+                        id="special"
                         ref={isSpecialRef}
-                        name="special" 
+                        name="special"
                         className="mr-2" />
                     <label className=" text-sm font-medium text-gray-900" htmlFor="special">Is Special</label>
                 </div>

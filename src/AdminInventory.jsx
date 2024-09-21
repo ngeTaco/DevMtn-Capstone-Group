@@ -3,13 +3,16 @@ import AdminInventoryTable from "./components/AdminInventoryPage/AdminInventoryT
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AdminInventoryAddItem from "./components/AdminInventoryPage/AdminInventoryAddItem.jsx";
+import { useDispatch } from "react-redux";
+import { getAllItems } from "./store/globalReducer.js"
 
 
 function AdminInventory() {
-
+  const dispatch = useDispatch()
   const [allItems, setAllItems] = useState([]);
 
   useEffect(() => {
+    dispatch(getAllItems)
     const requestItems = axios.get('/api/all/inventory').then(({ data }) => {
       setAllItems(data)
     })
