@@ -6,13 +6,11 @@ import LoginForm from './components/LoginPage/LoginForm';
 
 
 const Login = () => {
-  //NEW
 
   const navigate = useNavigate();
 
   const handleLogin = async (event, formData) => {
     event.preventDefault();
-    console.log(formData);
 
     const res = await axios.post('/api/auth/login', formData);
 
@@ -23,7 +21,6 @@ const Login = () => {
     }
   };
 
-  //NEW
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
