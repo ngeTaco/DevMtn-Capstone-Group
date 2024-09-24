@@ -5,7 +5,9 @@ const initialState = {
     cart: [],
     itemModal: false,
     modelContent: {},
-    isLoggedIn: false
+    isLoggedIn: false,
+    cartDrawer: false,
+    drawerContent: {}
 }
 /// {type:"UPDATE_CART", payload:cartItems} ///
 
@@ -47,6 +49,13 @@ export default function globalReducer(state = initialState, action) {
             ...state,
             itemModal: action.payload
 
+        }
+        case "HANDLE_DRAWER":
+        console.log(action.payload)
+        return {
+            ...state,
+            cartDrawer: action.payload
+            
         }
         default:
             return state

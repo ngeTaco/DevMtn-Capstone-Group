@@ -2,6 +2,7 @@ import { useState } from "react";
 import Itembox from "./components/storefront/Itembox.jsx";
 import Specialbox from "./components/storefront/Specialbox.jsx";
 import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
+import CartDrawer from "./components/storefront/CartDrawer.jsx";
 
 // make greys more cubical, press the special product elsewhere 
 
@@ -20,7 +21,8 @@ function Storefront() {
 
                     <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                         {/* Grid Start + item1 */}
-                        <Itembox />
+                        <Itembox /> 
+                        {/* add set widths for each itembox */}
                         <Itembox />
                         <Itembox />
                         <Itembox />
@@ -36,6 +38,9 @@ function Storefront() {
                             setIsOpen={setIsOpen}
                             item={'item'}
                         />
+                    </div>
+                    <div>
+                        <CartDrawer/>
                     </div>
                 </div>
             </section>
