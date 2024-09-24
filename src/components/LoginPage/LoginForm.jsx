@@ -1,12 +1,24 @@
+import { useState } from 'react';
 
 
 export default function LoginForm({ onLogin }) {
+    const [usernameValue, setUsernameValue] = useState('');
+    const [passwordValue, setPasswordValue] = useState('');
 
 
     return (
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-            <form className="space-y-6" action="#" method="POST">
+            <form
+                className="space-y-6"
+                action="#"
+                method="POST"
+                onSubmit={(e) => {
+                    onLogin(e, {
+                        username: usernameValue,
+                        password: passwordValue,
+                    });
+                }}>
                 <div>
                     <label for="username" className="block text-sm font-medium leading-6 text-gray-900">Username</label>
                     <div className="mt-2">
@@ -15,6 +27,7 @@ export default function LoginForm({ onLogin }) {
                             name="username"
                             type="text"
                             required
+                            onChange={(e) => setUsernameValue(e.target.value)}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         >
                         </input>
@@ -31,6 +44,7 @@ export default function LoginForm({ onLogin }) {
                             name="password"
                             type="password"
                             required
+                            onChange={(e) => setPasswordValue(e.target.value)}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         >
                         </input>

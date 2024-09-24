@@ -1,7 +1,7 @@
 [
     {
         "isAdmin": true,
-        "userName": "Big Manager",
+        "username": "Big Manager",
         "password": "admin11",
         "firstName": "Eva",
         "lastName": "P",
@@ -9,7 +9,7 @@
     },
     {
         "isAdmin": true,
-        "userName": "Normal Manager",
+        "username": "Normal Manager",
         "password": "admin22",
         "firstName": "Jace",
         "lastName": "H",
@@ -17,7 +17,7 @@
     },
     {
         "isAdmin": false,
-        "userName": "Fastest Prest in the West",
+        "username": "Fastest Prest in the West",
         "password": "pm123",
         "firstName": "Preston",
         "lastName": "M",
@@ -26,7 +26,7 @@
     },
     {
         "isAdmin": false,
-        "userName": "FairyMary123",
+        "username": "FairyMary123",
         "password": "mc123",
         "firstName": "Mary",
         "lastName": "C",
@@ -35,7 +35,7 @@
     },
     {
         "isAdmin": false,
-        "userName": "AldoSmallThings",
+        "username": "AldoSmallThings",
         "password": "ag123",
         "firstName": "Aldo",
         "lastName": "G",
@@ -44,7 +44,7 @@
     },
     {
         "isAdmin": false,
-        "userName": "Looking for the big old pie in the sky dream",
+        "username": "Looking for the big old pie in the sky dream",
         "password": "dh123",
         "firstName": "Diego",
         "lastName": "Pie",

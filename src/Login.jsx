@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import { Inventory } from '../server/models';
 import LoginForm from './components/LoginPage/LoginForm';
 
 
@@ -13,6 +12,7 @@ const Login = () => {
 
   const handleLogin = async (event, formData) => {
     event.preventDefault();
+    console.log(formData);
 
     const res = await axios.post('/api/auth/login', formData);
 
@@ -32,7 +32,8 @@ const Login = () => {
         </h2>
       </div>
 
-      <LoginForm />
+      <LoginForm 
+      onLogin={handleLogin}/>
 
     </div>
   );

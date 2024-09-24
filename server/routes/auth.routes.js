@@ -8,8 +8,8 @@ const authRoutes = Router();
 
 // LOGIN for User
 authRoutes.post('/login', async (req, res) => {
-    const { userName, password } = req.body;
-    const user = await User.findOne({ where: { userName: userName } });
+    const { username, password } = req.body;
+    const user = await User.findOne({ where: { username: username } });
 
     if (user && user.password === password) {
         req.session.userId = user.userId;

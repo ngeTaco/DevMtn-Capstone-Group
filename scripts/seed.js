@@ -17,11 +17,11 @@ console.log('Seeding database...');
 // seeding Users
 const usersInDB = await Promise.all(
     userData.map((user) => {
-        const { isAdmin, userName, password, firstName, lastName, points, profileImage } = user;
+        const { isAdmin, username, password, firstName, lastName, points, profileImage } = user;
 
         const newUser = User.create({
             isAdmin: isAdmin,
-            userName: userName,
+            username: username,
             password: password,
             firstName: firstName,
             lastName: lastName,
