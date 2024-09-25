@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import LoginForm from './components/LoginPage/LoginForm';
+import LoginForm from '../components/LoginPage/LoginForm';
+import { useDispatch } from 'react-redux';
 
 
 
 const Login = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogin = async (event, formData) => {
     event.preventDefault();
@@ -16,8 +18,24 @@ const Login = () => {
 
     if (res.data.success) {
 
-      //dispatch this to isAdmin
-      navigate('/shop');
+console.log("resdata", res.data)
+
+      dispatch({
+        type: 'SET_USER',
+        payload: res.data.userObj
+      })
+
+      dispatch({
+        type: 'SET_IS_ADMIN',
+        payload: res.data.userObj.isAdmin
+      })
+
+      if (res.data.userObj.isAdmin) {
+        navigate('/admin');
+        } else {
+        navigate('/shop');
+        }
+      
     }
   };
 
@@ -29,22 +47,11 @@ const Login = () => {
         </h2>
       </div>
 
-      <LoginForm 
-      onLogin={handleLogin}/>
+      <LoginForm
+        onLogin={handleLogin} />
 
     </div>
   );
 }
 
 export default Login;
-
-
-
-///isadmin redux use ternary to nav to admin page or shopping page
-// {
-// isadmin ?
-// nav to admin Inventory
-// :
-// nav to shopping page
-// }
-// store logged into session, at login, send user information to redux, store isadmin separate

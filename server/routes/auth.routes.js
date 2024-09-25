@@ -13,7 +13,9 @@ authRoutes.post('/login', async (req, res) => {
 
     if (user && user.password === password) {
         req.session.userId = user.userId;
-        res.json({ success: true });
+        const userObj = user.toJSON();
+        delete userObj.password
+        res.json({ success: true, userObj });
     } else {
         res.json({ success: false });
     }

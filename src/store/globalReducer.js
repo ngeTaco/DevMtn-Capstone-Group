@@ -5,7 +5,9 @@ const initialState = {
     cart: [],
     itemModal: false,
     modelContent: {},
-    isLoggedIn: false
+    isLoggedIn: false,
+    isAdmin: false,
+    userProfile: {}
 }
 /// {type:"UPDATE_CART", payload:cartItems} ///
 
@@ -19,8 +21,8 @@ export function getAllItems(dispatch) {
 }
 
 export default function globalReducer(state = initialState, action) {
-    console.log(action)
-    console.log(state)
+    //console.log(action)
+    //console.log(state)
 
     switch (action.type) {
         case "UPDATE_CART":
@@ -30,11 +32,23 @@ export default function globalReducer(state = initialState, action) {
             }
 
         case "SET_ALL_ITEMS":
-        console.log(action.payload)    
-        return {
+            return {
                 ...state,
                 allItems: action.payload
             }
+
+        case "SET_USER":
+            return {
+                ...state,
+                userProfile: action.payload
+            }
+
+        case "SET_IS_ADMIN":
+            return {
+                ...state,
+                isAdmin: action.payload
+            }
+
         default:
             return state
     }
