@@ -18,7 +18,6 @@ function Storefront() {
         })
     }
 
-    
 
     return (
         <body>
