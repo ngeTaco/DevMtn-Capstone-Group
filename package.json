@@ -12,6 +12,7 @@
     "seed": "node scripts/seed.js"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@reduxjs/toolkit": "^2.2.7",
     "aspect-ratio": "^2.1.5",
     "axios": "^1.7.7",
