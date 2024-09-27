@@ -1,34 +1,66 @@
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
-import { XMark } from "../CommonComponents/icons"
+import { useSelector, useDispatch } from "react-redux";
+import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 
 
 function CartDrawer() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    function closeDrawer() {
-        console.log('closed')
+    const closeDrawer = () => {
+        console.log('Drawer close clicked');
         dispatch({
             type: `HANDLE_DRAWER`,
             payload: false
-        })
-    }
-    const drawer = useSelector((accessState) => {
-        return (accessState.globalState.cartDrawer)
-    })
-    if (!drawer) return null
+        });
+    };
 
+    const openDrawer = () => {
+        dispatch({
+            type: `HANDLE_DRAWER`,
+            payload: true
+        });
+    };
 
+    const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
+
+    console.log('Drawer state:', drawer);
+
+    if (!drawer) return null;
 
     return (
-        <div className="bg-slate-200 ">
-            <XMark role="button" class="flex mr "/>
-                <button onClick={closeDrawer}>
-                    <input id="drawer-toggle" className="mr-20" />
-                </button>
+        <div className="relative">
+            <button onClick={openDrawer}>
+                <ShoppingCartIcon />
+            </button>
+
+            <div className={`fixed top-0 right-0 h-full w-96 bg-slate-200 shadow-lg`}>
+                <div className="flex justify-end p-4">
+                    <button onClick={closeDrawer}>
+                        <XMark />
+                    </button>
+                </div>
+
+                <div className="p-4">
+                    <h2 className="text-3xl text-center font-bold mb-2">Cart</h2>
+                    <p className="text-center mb-10">@username</p>
+
+                    <ul className="space-y-4">
+                        <li className="flex justify-between text-lg ml-5">
+                            <p>Pokeball</p>
+                            <p>...5</p>
+                        </li>
+                        <li className="flex justify-between text-lg ml-5">
+                            <p>Great Ball</p>
+                            <p>...5</p>
+                        </li>
+                        <li className="flex justify-between text-lg ml-5">
+                            <p>Potion</p>
+                            <p>...5</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        
-    )
+        </div>
+    );
 }
 
-export default CartDrawer
+export default CartDrawer;
