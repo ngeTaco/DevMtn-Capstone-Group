@@ -58,7 +58,15 @@ function CartDrawer() {
                         </li>
                     </ul>
                 </div>
+                <p className="flex text-2xl ml-8 mt-32 pb-10 space-y-5"> Total:  </p>
+                <div className="mx-32">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                        Buy Now
+                    </button>
+                </div>
+
             </div>
+
         </div>
     );
 }
