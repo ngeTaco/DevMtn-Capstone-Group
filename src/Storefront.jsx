@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Itembox from "./components/storefront/Itembox.jsx";
 import Specialbox from "./components/storefront/Specialbox.jsx";
 import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
@@ -15,18 +15,29 @@ function Storefront() {
     const userInfo = useSelector((state) => {
         return state.globalState.userProfile
     })
-//NEW
-    const res = await axios.get(`/api/history/${userInfo.userId}`)
-    const userHistory = res.data;
-    console.log(userHistory);
-    dispatch({
-        type: 'SET_USER_HISTORY',
-        payload: userHistory
-    })
+
+useEffect(() => {
+    async function fetchUserHistory() {
+        try {
+            const response = await axios.get(`/api/history/${userInfo.userId}`);
+            const userHistory = response.data;
+            console.log("userHistory", userHistory);
+            dispatch({
+                type: 'SET_USER_HISTORY',
+                payload: userHistory
+            });
+        } catch (error) {
+            console.error("Error fetching user history:", error);
+        }
+    }
+
+    if (userInfo.userId) {
+        fetchUserHistory();
+    }
+}, [userInfo.userId, dispatch])
 
 
 
-//NEW
     function openDrawerOnMain() {
         dispatch({
             type: `HANDLE_DRAWER`,

@@ -1,6 +1,12 @@
+import { useSelector } from "react-redux";
 import ShopperInventoryRow from "./ShopperInventoryRow.jsx";
 
 function ShopperInventory() {
+
+    const userHistory = useSelector((state) => {
+        return state.globalState.userHistory
+    })
+
     return (
         <>
             <h3 className="text-gray-800 text-xl my-4 font-bold text-center">Inventory</h3>
@@ -15,11 +21,16 @@ function ShopperInventory() {
                         <p className="text-sm font-semibold leading-6 text-gray-900">Quantity</p>
                     </div>
                 </li>
-                <ShopperInventoryRow />
-                <ShopperInventoryRow />
-                <ShopperInventoryRow />
-                <ShopperInventoryRow />
-                <ShopperInventoryRow />
+                {userHistory.map((history) => {
+                return(
+                <ShopperInventoryRow
+                key={history.historyId}
+                itemName={history.inventory.itemName}
+                shopperQuantity={history.shopperQuantity}
+                />
+                )
+                })}
+
             </ul>
 
         </>
@@ -28,4 +39,3 @@ function ShopperInventory() {
 }
 
 export default ShopperInventory;
-
