@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Itembox from "./components/storefront/Itembox.jsx";
-import Specialbox from "./components/storefront/Specialbox.jsx";
-import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
-import CartDrawer from "./components/storefront/CartDrawer.jsx";
-import { ShoppingCartIcon } from "./components/CommonComponents/icons.jsx";
+import Itembox from "../components/storefront/Itembox.jsx";
+import Specialbox from "../components/storefront/Specialbox.jsx";
+import ItemboxModal from "../components/storefront/ItemboxModal.jsx";
+import CartDrawer from "../components/storefront/CartDrawer.jsx";
+import { ShoppingCartIcon } from "../components/CommonComponents/icons.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
