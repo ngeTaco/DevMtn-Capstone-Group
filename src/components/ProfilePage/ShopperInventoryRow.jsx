@@ -12,7 +12,7 @@ function ShopperInventoryRow({itemName, shopperQuantity}) {
                     </div>
                     <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                         <p className="mt-1 text-xs leading-5 text-gray-500">
-                            {shopperQuantity}
+                            x{shopperQuantity}
                             </p>
                     </div>
                 </li>
