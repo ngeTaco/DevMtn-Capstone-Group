@@ -2,7 +2,7 @@ import App from './App.jsx'
 import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Storefront from './Storefront.jsx'
 import Login from './pages/Login.jsx'
-import ProfilePage from './Profile.jsx'
+import ProfilePage from './pages/Profile.jsx'
 import AdminInventory from './AdminInventory.jsx'
 
 export default function Router() {
