@@ -3,7 +3,7 @@ import AdminInventoryTable from "./components/AdminInventoryPage/AdminInventoryT
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AdminInventoryAddItem from "./components/AdminInventoryPage/AdminInventoryAddItem.jsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllItems } from "./store/globalReducer.js"
 
 
@@ -19,6 +19,12 @@ function AdminInventory() {
   },
     []
   )
+  const adminStatus = useSelector((state) => {
+    return state.globalState.isAdmin
+  })
+
+  if (!adminStatus) return null;
+
   return (
     <div className="flex gap-6">
       < AdminInventoryTable

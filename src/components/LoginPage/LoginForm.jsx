@@ -20,7 +20,7 @@ export default function LoginForm({ onLogin }) {
                     });
                 }}>
                 <div>
-                    <label for="username" className="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                    <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">Username</label>
                     <div className="mt-2">
                         <input
                             id="username"
@@ -36,7 +36,7 @@ export default function LoginForm({ onLogin }) {
 
                 <div>
                     <div className="flex items-center justify-between">
-                        <label for="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                     </div>
                     <div className="mt-2">
                         <input

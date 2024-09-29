@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router';
+import { Outlet, useNavigate } from 'react-router';
 import LoginForm from '../components/LoginPage/LoginForm';
 import { useDispatch } from 'react-redux';
 
@@ -18,8 +18,6 @@ const Login = () => {
 
     if (res.data.success) {
 
-console.log("resdata", res.data)
-
       dispatch({
         type: 'SET_USER',
         payload: res.data.userObj
@@ -32,10 +30,10 @@ console.log("resdata", res.data)
 
       if (res.data.userObj.isAdmin) {
         navigate('/admin');
-        } else {
+      } else {
         navigate('/shop');
-        }
-      
+      }
+
     }
   };
 
@@ -49,8 +47,9 @@ console.log("resdata", res.data)
 
       <LoginForm
         onLogin={handleLogin} />
-
+      <Outlet />
     </div>
+
   );
 }
 

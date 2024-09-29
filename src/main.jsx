@@ -12,7 +12,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Provider>
   </React.StrictMode>,
 )
-
-//now that the global store is surrounding the router, we can pass redux info to it.
-//in router.jsx each route can validate if they are in admin role or not similar to 
-// loggedin in ratings.routes.js 
