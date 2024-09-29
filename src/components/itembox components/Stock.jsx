@@ -1,8 +1,8 @@
-function Stock() {
+function Stock(props) {
 
 
     return (
-        <span className="text-gray-700">x30</span>
+        <span className="text-gray-700">x{props.quantity}</span>
     )
 }
 

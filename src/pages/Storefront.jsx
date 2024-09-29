@@ -16,26 +16,48 @@ function Storefront() {
         return state.globalState.userProfile
     })
 
-useEffect(() => {
-    async function fetchUserHistory() {
-        try {
-            const response = await axios.get(`/api/history/${userInfo.userId}`);
-            const userHistory = response.data;
-            console.log("userHistory", userHistory);
-            dispatch({
-                type: 'SET_USER_HISTORY',
-                payload: userHistory
-            });
-        } catch (error) {
-            console.error("Error fetching user history:", error);
+    // This is to fetch user history when shopper logs in. Since shoppers are navigated here first, it made sense to put here instead of profile page
+    useEffect(() => {
+        async function fetchUserHistory() {
+            try {
+                const response = await axios.get(`/api/history/${userInfo.userId}`);
+                const userHistory = response.data;
+
+                dispatch({
+                    type: 'SET_USER_HISTORY',
+                    payload: userHistory
+                });
+            } catch (error) {
+                console.error("Error fetching user history:", error);
+            }
         }
-    }
+        if (userInfo.userId) {
+            fetchUserHistory();
+        }
+    }, [userInfo.userId, dispatch])
 
-    if (userInfo.userId) {
-        fetchUserHistory();
-    }
-}, [userInfo.userId, dispatch])
+    // This is to fetch regular inventory for the shopping page
+    useEffect(() => {
+        async function fetchRegularInventory() {
+            try {
+                const response = await axios.get('/api/inventory/regular');
+                const regularInventory = response.data;
 
+                dispatch({
+                    type: 'SET_REGULAR_ITEMS',
+                    payload: regularInventory
+                });
+            } catch (error) {
+                console.error("Error fetching regular inventory:", error);
+            }
+        }
+        fetchRegularInventory();
+    }, [dispatch]);
+
+    //Need to fetch the singular special endpoint and pass those props to the component
+
+    const regInventory = useSelector((state) =>
+        state.globalState.regInventory) || [];
 
 
     function openDrawerOnMain() {
@@ -57,13 +79,18 @@ useEffect(() => {
 
                     <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                         {/* Grid Start + item1 */}
-                        <Itembox />
                         {/* add set widths for each itembox */}
-                        <Itembox />
-                        <Itembox />
-                        <Itembox />
-                        <Itembox />
-                        <Itembox />
+                        {regInventory.map((reginv) => {
+                            return (
+                                <Itembox
+                                    key={reginv.itemId}
+                                    itemName={reginv.itemName}
+                                    itemPrice={reginv.itemPrice}
+                                    quantity={reginv.quantity}
+                                    imageUrl={reginv.imageUrl}
+                                />
+                            )
+                        })}
 
                         {/* Special Item */}
                     </div>

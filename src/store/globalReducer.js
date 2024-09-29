@@ -39,6 +39,18 @@ export default function globalReducer(state = initialState, action) {
                 allItems: action.payload
             }
 
+            case "SET_REGULAR_ITEMS":
+                return {
+                    ...state,
+                    regInventory: action.payload
+                }
+
+            case "SET_SPECIAL_ITEMS":
+                    return {
+                        ...state,
+                        specInventory: action.payload
+                    }
+
         case "SET_USER":
             return {
                 ...state,
