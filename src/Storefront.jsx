@@ -4,16 +4,32 @@ import Specialbox from "./components/storefront/Specialbox.jsx";
 import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
 import CartDrawer from "./components/storefront/CartDrawer.jsx";
 import { ShoppingCartIcon } from "./components/CommonComponents/icons.jsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 
 function Storefront() {
     const [isOpen, setIsOpen] = useState(true)
     const dispatch = useDispatch()
-    
-    function openDrawerOnMain (){
-        dispatch ({
-            type:`HANDLE_DRAWER`,
+
+    const userInfo = useSelector((state) => {
+        return state.globalState.userProfile
+    })
+//NEW
+    const res = await axios.get(`/api/history/${userInfo.userId}`)
+    const userHistory = res.data;
+    console.log(userHistory);
+    dispatch({
+        type: 'SET_USER_HISTORY',
+        payload: userHistory
+    })
+
+
+
+//NEW
+    function openDrawerOnMain() {
+        dispatch({
+            type: `HANDLE_DRAWER`,
             payload: true
         })
     }
@@ -30,7 +46,7 @@ function Storefront() {
 
                     <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                         {/* Grid Start + item1 */}
-                        <Itembox /> 
+                        <Itembox />
                         {/* add set widths for each itembox */}
                         <Itembox />
                         <Itembox />
@@ -50,12 +66,12 @@ function Storefront() {
                     </div>
                     <div>
                         <button onClick={openDrawerOnMain}>
-                            <ShoppingCartIcon 
-                            role="button"
+                            <ShoppingCartIcon
+                                role="button"
 
                             />
                         </button>
-                        <CartDrawer/>
+                        <CartDrawer />
                     </div>
                 </div>
             </section>

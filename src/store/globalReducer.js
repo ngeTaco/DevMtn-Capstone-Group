@@ -51,26 +51,32 @@ export default function globalReducer(state = initialState, action) {
                 isAdmin: action.payload
             }
 
-        case "HANDLE_MODAL" :
-        console.log(action.payload)
-        return {
-            ...state,
-            itemModal: action.payload
-        }
-        case "HANDLE_SPECIAL_MODAL":
-        console.log(action.payload)
-        return {   
-            ...state,
-            itemModal: action.payload
+        case "SET_USER_HISTORY":
+            return {
+                ...state,
+                userHistory: action.payload
+            }
 
-        }
+        case "HANDLE_MODAL":
+            console.log(action.payload)
+            return {
+                ...state,
+                itemModal: action.payload
+            }
+        case "HANDLE_SPECIAL_MODAL":
+            console.log(action.payload)
+            return {
+                ...state,
+                itemModal: action.payload
+
+            }
         case "HANDLE_DRAWER":
-        console.log(action.payload)
-        return {
-            ...state,
-            cartDrawer: action.payload
-            
-        }
+            console.log(action.payload)
+            return {
+                ...state,
+                cartDrawer: action.payload
+
+            }
         default:
             return state
     }
