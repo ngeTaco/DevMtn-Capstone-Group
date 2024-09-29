@@ -1,6 +1,5 @@
-import { useState } from "react";
-import ShopperInventory from "./components/ProfilePage/ShopperInventory.jsx";
-import ShopperProfile from "./components/ProfilePage/ShopperProfile.jsx";
+import ShopperInventory from "../components/ProfilePage/ShopperInventory.jsx";
+import ShopperProfile from "../components/ProfilePage/ShopperProfile.jsx";
 
 function ProfilePage() {
 

@@ -22,7 +22,7 @@ User.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        userName: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,

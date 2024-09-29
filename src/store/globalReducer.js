@@ -6,6 +6,8 @@ const initialState = {
     itemModal: false,
     modelContent: {},
     isLoggedIn: false,
+    isAdmin: false,
+    userProfile: {},
     cartDrawer: false,
     drawerContent: {}
 }
@@ -21,8 +23,8 @@ export function getAllItems(dispatch) {
 }
 
 export default function globalReducer(state = initialState, action) {
-    console.log(action)
-    console.log(state)
+    //console.log(action)
+    //console.log(state)
 
     switch (action.type) {
         case "UPDATE_CART":
@@ -32,31 +34,49 @@ export default function globalReducer(state = initialState, action) {
             }
 
         case "SET_ALL_ITEMS":
-        console.log(action.payload)    
-        return {
+            return {
                 ...state,
                 allItems: action.payload
             }
-        case "HANDLE_MODAL" :
-        console.log(action.payload)
-        return {
-            ...state,
-            itemModal: action.payload
-        }
-        case "HANDLE_SPECIAL_MODAL":
-        console.log(action.payload)
-        return {   
-            ...state,
-            itemModal: action.payload
 
-        }
+        case "SET_USER":
+            return {
+                ...state,
+                userProfile: action.payload
+            }
+
+        case "SET_IS_ADMIN":
+            return {
+                ...state,
+                isAdmin: action.payload
+            }
+
+        case "SET_USER_HISTORY":
+            return {
+                ...state,
+                userHistory: action.payload
+            }
+
+        case "HANDLE_MODAL":
+            console.log(action.payload)
+            return {
+                ...state,
+                itemModal: action.payload
+            }
+        case "HANDLE_SPECIAL_MODAL":
+            console.log(action.payload)
+            return {
+                ...state,
+                itemModal: action.payload
+
+            }
         case "HANDLE_DRAWER":
-        console.log(action.payload)
-        return {
-            ...state,
-            cartDrawer: action.payload
-            
-        }
+            console.log(action.payload)
+            return {
+                ...state,
+                cartDrawer: action.payload
+
+            }
         default:
             return state
     }
