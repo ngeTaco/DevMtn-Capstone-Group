@@ -2,13 +2,21 @@ import { useState } from "react";
 import Itembox from "./components/storefront/Itembox.jsx";
 import Specialbox from "./components/storefront/Specialbox.jsx";
 import ItemboxModal from "./components/storefront/ItemboxModal.jsx";
+import CartDrawer from "./components/storefront/CartDrawer.jsx";
+import { ShoppingCartIcon } from "./components/CommonComponents/icons.jsx";
+import { useDispatch } from "react-redux";
 
-// make greys more cubical, press the special product elsewhere 
 
 function Storefront() {
     const [isOpen, setIsOpen] = useState(true)
-
-
+    const dispatch = useDispatch()
+    
+    function openDrawerOnMain (){
+        dispatch ({
+            type:`HANDLE_DRAWER`,
+            payload: true
+        })
+    }
 
 
     return (
@@ -22,7 +30,8 @@ function Storefront() {
 
                     <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                         {/* Grid Start + item1 */}
-                        <Itembox />
+                        <Itembox /> 
+                        {/* add set widths for each itembox */}
                         <Itembox />
                         <Itembox />
                         <Itembox />
@@ -38,6 +47,15 @@ function Storefront() {
                             setIsOpen={setIsOpen}
                             item={'item'}
                         />
+                    </div>
+                    <div>
+                        <button onClick={openDrawerOnMain}>
+                            <ShoppingCartIcon 
+                            role="button"
+
+                            />
+                        </button>
+                        <CartDrawer/>
                     </div>
                 </div>
             </section>
