@@ -10,6 +10,8 @@ import axios from "axios";
 
 function Storefront() {
     const [isOpen, setIsOpen] = useState(true)
+    const [selectedItem, setSelectedItem] = useState(null); //NOTE
+    console.log("selectedItem", selectedItem)
     const dispatch = useDispatch()
 
     const userInfo = useSelector((state) => {
@@ -87,6 +89,10 @@ function Storefront() {
         })
     }
 
+    function handleItemClick(item) {
+        console.log("Item clicked:", item);
+        setSelectedItem(item);
+    } //NOTE
 
     return (
         <body>
@@ -108,6 +114,7 @@ function Storefront() {
                                     itemPrice={reginv.itemPrice}
                                     quantity={reginv.quantity}
                                     imageUrl={reginv.imageUrl}
+                                    onClick={() => handleItemClick(reginv)} //NOTE
                                 />
                             )
                         })}
@@ -121,11 +128,12 @@ function Storefront() {
                             itemPrice={specInventory.itemPrice}
                             quantity={specInventory.quantity}
                             imageUrl={specInventory.imageUrl}
+                            onClick={() => handleItemClick(specInventory)} //NOTE
                         />
                         <ItemboxModal
                             isOpen={isOpen}
                             setIsOpen={setIsOpen}
-                            item={'item'}
+                            item={selectedItem}  //NOTE
                         />
                     </div>
                     <div>

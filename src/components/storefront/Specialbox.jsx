@@ -16,7 +16,7 @@ function Specialbox(props) {
     }
 
     return (
-        <div className="justify-end m-7 mt-10 group block overflow-hidden border border-gray-400 rounded-md">
+        <div className="justify-end m-7 mt-10 group block overflow-hidden border border-gray-400 rounded-md" onClick={props.onClick}>
             <a role="button" onClick={openSpecialModal} className="block overflow-hidden">
                 <img
                     src={props.imageUrl}

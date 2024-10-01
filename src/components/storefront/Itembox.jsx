@@ -15,7 +15,7 @@ function Itembox(props) {
     }
 
     return (
-        <div className="group block overflow-hidden border space-x-5 border-gray-400 rounded-md">
+        <div className="group block overflow-hidden border space-x-5 border-gray-400 rounded-md" onClick={props.onClick}>
             <a role="button" onClick={openModal} className="block overflow-hidden">
                 <img
                     src={props.imageUrl}

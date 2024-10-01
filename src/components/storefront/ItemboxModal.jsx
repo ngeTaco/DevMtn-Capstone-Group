@@ -40,21 +40,21 @@ function ItemboxModal(props) {
         <div className="mt-2.5 mb-2 flex flex-col justify-center items-center">
           <div className="flex flex-row justify-between w-72 items-center">
             <ItemName
-              itemName={props.itemName}
+              itemName={props.item.itemName}
             />
             <Stock
-              quantity={props.quantity}
+              quantity={props.item.quantity}
             />
           </div>
-          <img src={props.imageUrl}
+          <img src={props.item.imageUrl}
             className="h-[250px] w-[250px] content-center  "
           ></img>
           <p className="m-3 text-center italic ">
-            {props.itemDescription}
+            {props.item.itemDescription}
           </p>
           <div className="flex ml-80">
             <Points
-              itemPrice={props.itemPrice}
+              itemPrice={props.item.itemPrice}
             />
           </div>
         </div>
