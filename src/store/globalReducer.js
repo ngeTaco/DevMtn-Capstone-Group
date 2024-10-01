@@ -45,7 +45,7 @@ export default function globalReducer(state = initialState, action) {
                     regInventory: action.payload
                 }
 
-            case "SET_SPECIAL_ITEMS":
+            case "SET_SPECIAL_ITEM":
                     return {
                         ...state,
                         specInventory: action.payload

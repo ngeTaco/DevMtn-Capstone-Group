@@ -55,9 +55,29 @@ function Storefront() {
     }, [dispatch]);
 
     //Need to fetch the singular special endpoint and pass those props to the component
+    useEffect(() => {
+        async function fetchSpecialInventory() {
+            try {
+                const response = await axios.get('/api/inventory/special/instock');
+                const specialInventory = response.data;
+
+                dispatch({
+                    type: 'SET_SPECIAL_ITEM',
+                    payload: specialInventory
+                });
+            } catch (error) {
+                console.error("Error fetching special inventory:", error);
+            }
+        }
+        fetchSpecialInventory();
+    }, [dispatch]);
+
 
     const regInventory = useSelector((state) =>
         state.globalState.regInventory) || [];
+
+    const specInventory = useSelector((state) =>
+        state.globalState.specInventory) || [];
 
 
     function openDrawerOnMain() {
@@ -95,7 +115,13 @@ function Storefront() {
                         {/* Special Item */}
                     </div>
                     <div className="mt-44 gap-x-12">
-                        <Specialbox />
+                        <Specialbox
+                            key={specInventory.itemId}
+                            itemName={specInventory.itemName}
+                            itemPrice={specInventory.itemPrice}
+                            quantity={specInventory.quantity}
+                            imageUrl={specInventory.imageUrl}
+                        />
                         <ItemboxModal
                             isOpen={isOpen}
                             setIsOpen={setIsOpen}
