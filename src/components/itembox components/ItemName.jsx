@@ -1,9 +1,9 @@
-function ItemName() {
+function ItemName(props) {
 
 
     return (
         <h3 className="text-lg">
-            Pokéball
+            {props.itemName}
         </h3>
     )
 }

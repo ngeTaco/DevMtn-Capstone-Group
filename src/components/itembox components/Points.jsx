@@ -1,8 +1,8 @@
-function Points() {
+function Points(props) {
 
 
     return (
-        <span className="text-gray-700">100pts</span>
+        <span className="text-gray-700">{props.itemPrice}pts</span>
     )
 }
 
