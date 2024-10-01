@@ -9,9 +9,11 @@ import axios from "axios";
 
 
 function Storefront() {
+    
     const [isOpen, setIsOpen] = useState(true)
-    const [selectedItem, setSelectedItem] = useState(null); //NOTE
-    console.log("selectedItem", selectedItem)
+    
+    const [selectedItem, setSelectedItem] = useState(null);
+
     const dispatch = useDispatch()
 
     const userInfo = useSelector((state) => {
@@ -74,10 +76,9 @@ function Storefront() {
         fetchSpecialInventory();
     }, [dispatch]);
 
-
+//These are to get the inventory items from redux on page load with an empty array in case of failure
     const regInventory = useSelector((state) =>
         state.globalState.regInventory) || [];
-
     const specInventory = useSelector((state) =>
         state.globalState.specInventory) || [];
 
@@ -89,10 +90,11 @@ function Storefront() {
         })
     }
 
+    //Event handler for sending props to modal
     function handleItemClick(item) {
         console.log("Item clicked:", item);
         setSelectedItem(item);
-    } //NOTE
+    }
 
     return (
         <body>
@@ -114,7 +116,7 @@ function Storefront() {
                                     itemPrice={reginv.itemPrice}
                                     quantity={reginv.quantity}
                                     imageUrl={reginv.imageUrl}
-                                    onClick={() => handleItemClick(reginv)} //NOTE
+                                    onClick={() => handleItemClick(reginv)}
                                 />
                             )
                         })}
@@ -128,12 +130,12 @@ function Storefront() {
                             itemPrice={specInventory.itemPrice}
                             quantity={specInventory.quantity}
                             imageUrl={specInventory.imageUrl}
-                            onClick={() => handleItemClick(specInventory)} //NOTE
+                            onClick={() => handleItemClick(specInventory)}
                         />
                         <ItemboxModal
                             isOpen={isOpen}
                             setIsOpen={setIsOpen}
-                            item={selectedItem}  //NOTE
+                            item={selectedItem}
                         />
                     </div>
                     <div>
