@@ -10,7 +10,7 @@ function ItemboxModal(props) {
   const dispatch = useDispatch()
   console.log("modalProps", props)
   function modalOpen() {
-    console.log('opened')
+
     dispatch({
       type: `HANDLE_MODAL`,
       payload: false
@@ -21,7 +21,7 @@ function ItemboxModal(props) {
     return (accessState.globalState.itemModal)
 
   })
-  console.log("itemModal", itemModal)
+
   if (!itemModal) return null
 
 
