@@ -96,6 +96,14 @@ function Storefront() {
         setSelectedItem(item);
     }
 
+    //TODO : on Click of "add to cart", make item be added to cart
+    //TODO : Add input field in cart that allows the quantity bought to be changed
+    //TODO : "Buy Now" subtracts points from user
+
+    function addToCartDrawer() {
+        
+    }
+
     return (
         <body>
             <section className="">
