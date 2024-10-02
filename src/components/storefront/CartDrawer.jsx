@@ -44,18 +44,19 @@ function CartDrawer() {
                     <p className="text-center mb-10">@username</p>
 
                     <ul className="space-y-4">
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Pokeball</p>
-                            <p>...5</p>
+                        <li className="size-16 flex items-center space-x-4">
+                            <div className="flex flex-col items-center">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokeball" className="w-14 h-14" />
+                                <input type="number" placeholder="Quantity" className="mt-2 border rounded-md p-1 w-16 text-center" />
+                            </div>
+                            <div className="flex flex-col text-lg">
+                                <p>Pokeball</p>
+                                <p>Price</p>
+                                <p className="whitespace-nowrap">Total: 400pts</p>
+                            </div>
                         </li>
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Great Ball</p>
-                            <p>...5</p>
-                        </li>
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Potion</p>
-                            <p>...5</p>
-                        </li>
+
+
                     </ul>
                 </div>
                 <p className="flex text-2xl ml-8 mt-32 pb-10 space-y-5"> Total:  </p>
