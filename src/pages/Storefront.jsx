@@ -120,11 +120,8 @@ function Storefront() {
                             return (
                                 <Itembox
                                     key={reginv.itemId}
-                                    itemName={reginv.itemName}
-                                    itemPrice={reginv.itemPrice}
-                                    quantity={reginv.quantity}
-                                    imageUrl={reginv.imageUrl}
                                     onClick={() => handleItemClick(reginv)}
+                                    itemData={reginv}
                                 />
                             )
                         })}
@@ -139,6 +136,7 @@ function Storefront() {
                             quantity={specInventory.quantity}
                             imageUrl={specInventory.imageUrl}
                             onClick={() => handleItemClick(specInventory)}
+                            itemData={specInventory}
                         />
                         <ItemboxModal
                             isOpen={isOpen}
