@@ -1,9 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 
+//render cart items using the cartItems variable
 
 function CartDrawer() {
     const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.cartItems );
+    console.log(cartItems)
 
     const closeDrawer = () => {
         console.log('Drawer close clicked');
@@ -56,7 +59,8 @@ function CartDrawer() {
                                 <p>Price</p>
                                 <p className="whitespace-nowrap">Total: 400pts</p>
                             </div>
-                        </li>
+                        </li> 
+                        {/* //turn LI into a component */}
 
 
                     </ul>
