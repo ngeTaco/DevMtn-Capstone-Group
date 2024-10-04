@@ -48,8 +48,14 @@ function CartDrawer() {
                     <p className="text-center mb-10">@username</p>
 
                     <ul className="space-y-4">
-                        <ItemInCart />
-                        {/* //turn LI into a component */}
+                        {cartItems.map((itemInCart) =>{
+                            return (
+                                <ItemInCart 
+                                    key={itemInCart.itemId}
+                                    itemData={itemInCart}
+                                />
+                            )
+                        })}
                     </ul>
                 </div>
                 <p className="flex text-2xl ml-8 mt-32 pb-10 space-y-5"> Total:  </p>
