@@ -12,7 +12,7 @@ function Addcart(props) {
         console.log('add to cart')
         
         dispatch({
-            type: `ADD_TO_CART`,
+            type: `UPDATE_CART`,
             payload: props.itemData
         })
     }

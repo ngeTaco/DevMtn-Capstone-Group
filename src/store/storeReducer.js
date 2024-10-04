@@ -20,7 +20,7 @@ export default function storeReducer(state = initialState, action) {
     //console.log(state)
 
     switch (action.type) {
-        case 'ADD_TO_CART':
+        case 'UPDATE_CART':
             const itemToAdd = action.payload
             const itemToUpdate = state.cartItems.find((itemInCart) => {
                 console.log(itemInCart.id)
