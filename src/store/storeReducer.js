@@ -9,7 +9,7 @@ const initialState = {
             "quantity": 200,
             "isSpecialItem": false
         },
-        quanitkey: 1,
+        quantity: 1,
         total: 200,
         id: 1
     }]
@@ -22,14 +22,7 @@ export default function storeReducer(state = initialState, action) {
     switch (action.type) {
         case 'UPDATE_CART':
             const itemToAdd = action.payload
-            const itemToUpdate = state.cartItems.find((itemInCart) => {
-                console.log(itemInCart.id)
-                console.log(itemToAdd.itemId)
-                if (itemInCart.id === itemToAdd.itemId) {
-                    console.log('updated quantity')
-                    return (itemInCart)
-                } 
-            })
+            const itemToUpdate = state.cartItems.find((itemInCart) => itemInCart.id === itemToAdd.itemId)
             console.log(itemToUpdate)
             function createLineItem(item) {
                 return {
@@ -40,18 +33,31 @@ export default function storeReducer(state = initialState, action) {
                 }
             }
             if (itemToUpdate) {
-                
+                const updatedQuantity = []
+                return {
+                    ...state,
+                    cartItems: state.cartItems.map((item) => {
+                        if (item.id === itemToAdd.itemId) {
+                            item.quantity++
+                            item.total = item.quantity * item.cartItemKey.itemPrice
+                            return item
+                        }
+                            return item
+
+                    })
+                }
             } else {
                 return {
                     ...state,
-                    cartItems:[...state.cartItems, createLineItem(itemToAdd),]
+                    cartItems: [...state.cartItems, createLineItem(itemToAdd),]
                 }
             }
-            
 
-            
+
+
+
 
         default: return state
-        
+
     }
 }

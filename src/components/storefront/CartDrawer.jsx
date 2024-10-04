@@ -47,7 +47,7 @@ function CartDrawer() {
                     <h2 className="text-3xl text-center font-bold mb-2">Cart</h2>
                     <p className="text-center mb-10">@username</p>
 
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 overflow-auto">
                         {cartItems.map((itemInCart) =>{
                             return (
                                 <ItemInCart 
