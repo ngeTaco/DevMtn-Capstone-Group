@@ -2,12 +2,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 import ItemInCart from "./ItemInCart";
 
-//render cart items using the cartItems variable
+// Utility function to calculate the cart total (same as calculateTotalPrice)
+function cartTotal(cartItems) {
+    return cartItems.reduce((total, item) => total + item.total, 0);
+}
 
 function CartDrawer() {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart.cartItems );
-    console.log(cartItems)
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
+    console.log(cartItems);
 
     const closeDrawer = () => {
         console.log('Drawer close clicked');
@@ -24,9 +28,7 @@ function CartDrawer() {
         });
     };
 
-    const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-
-    console.log('Drawer state:', drawer);
+    const totalPrice = Math.round(cartTotal(cartItems));
 
     if (!drawer) return null;
 
@@ -47,8 +49,8 @@ function CartDrawer() {
                     <h2 className="text-3xl text-center font-bold mb-2">Cart</h2>
                     <p className="text-center mb-10">@username</p>
 
-                    <ul className="space-y-4 overflow-auto">
-                        {cartItems.map((itemInCart) =>{
+                    <ul className="space-y-4 overflow-scroll">
+                        {cartItems.map((itemInCart) => {
                             return (
                                 <ItemInCart 
                                     key={itemInCart.itemId}
@@ -58,15 +60,15 @@ function CartDrawer() {
                         })}
                     </ul>
                 </div>
-                <p className="flex text-2xl ml-8 mt-32 pb-10 space-y-5"> Total:  </p>
+                <p className="flex text-xl ml-8 mt-32 pb-10 space-y-5 font-weight"> 
+                    Total:  {totalPrice} points
+                </p>
                 <div className="mx-32">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Buy Now
                     </button>
                 </div>
-
             </div>
-
         </div>
     );
 }

@@ -1,18 +1,5 @@
 const initialState = {
-    cartItems: [{
-        cartItemKey: {
-            "itemId": 1,
-            "itemName": "Pokeball",
-            "itemDescription": "A tool used for catching wild POKéMON.",
-            "itemPrice": 200,
-            "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png",
-            "quantity": 200,
-            "isSpecialItem": false
-        },
-        quantity: 1,
-        total: 200,
-        id: 1
-    }]
+    cartItems: []
 }
 
 export default function storeReducer(state = initialState, action) {
@@ -20,7 +7,8 @@ export default function storeReducer(state = initialState, action) {
     //console.log(state)
 
     switch (action.type) {
-        case 'UPDATE_CART':
+        case 'UPDATE_CART': 
+        // increments too, dont need another one
             const itemToAdd = action.payload
             const itemToUpdate = state.cartItems.find((itemInCart) => itemInCart.id === itemToAdd.itemId)
             console.log(itemToUpdate)
@@ -45,19 +33,18 @@ export default function storeReducer(state = initialState, action) {
                             return item
 
                     })
-                }
+            }
             } else {
                 return {
                     ...state,
                     cartItems: [...state.cartItems, createLineItem(itemToAdd),]
                 }
             }
-
-
-
-
-
         default: return state
 
     }
+}
+
+function cartTotal(cartItems) {
+    return cartItems.reduce((total, item) => total + item.total, 0);
 }
