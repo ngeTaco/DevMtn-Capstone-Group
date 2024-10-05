@@ -80,54 +80,6 @@
         "isSpecialItem": true
     },
     {
-        "itemName": "Antidote",
-        "itemDescription": "A spray-type medicine. It lifts the effect of poison from one POKéMON.",
-        "itemPrice": 100,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/antidote.png",
-        "quantity": "30",
-        "isSpecialItem": false
-    },
-    {
-        "itemName": "Paralyze Heal",
-        "itemDescription": "A spray-type medicine. It eliminates paralysis from one POKéMON.",
-        "itemPrice": 200,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/paralyze-heal.png",
-        "quantity": "20",
-        "isSpecialItem": false
-    },
-    {
-        "itemName": "Awakening",
-        "itemDescription": "A spray-type medicine. It awakens one POKéMON from the clutches of sleep.",
-        "itemPrice": 200,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/awakening.png",
-        "quantity": "20",
-        "isSpecialItem": false
-    },
-    {
-        "itemName": "Burn Heal",
-        "itemDescription": "A spray-type medicine. It heals a single POKéMON that has been burned.",
-        "itemPrice": 250,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/burn-heal.png",
-        "quantity": "20",
-        "isSpecialItem": false
-    },
-    {
-        "itemName": "Ice Heal",
-        "itemDescription": "A spray-type medicine. It defrosts a single POKéMON that has been frozen solid.",
-        "itemPrice": 250,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ice-heal.png",
-        "quantity": "20",
-        "isSpecialItem": false
-    },
-    {
-        "itemName": "Full Heal",
-        "itemDescription": "A spray-type medicine. It heals all the status problems of a single POKéMON.",
-        "itemPrice": 600,
-        "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/full-heal.png",
-        "quantity": "10",
-        "isSpecialItem": false
-    },
-    {
         "itemName": "Escape Rope",
         "itemDescription": "A long, durable rope. Use it to escape instantly from locations like caves or dungeons.",
         "itemPrice": 550,
