@@ -1,36 +1,34 @@
-import { Link, Outlet} from "react-router-dom"
-import React from "react"
-
-//LANDING PAGE, SERVES AS HEADER KINDA, DOES NOT MOVE, WE CAN CHANGE THIS LATER
+import { Outlet } from "react-router-dom"
+import React, { useEffect } from "react"
+import NavigationBar from "./components/NavBar/NavigationBar"
+import { useDispatch } from "react-redux"
 
 function App() {
 
-    return (
-        <div>
-          <nav className="flex space-x-4 px-8">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/shop">Shop</Link>
-              </li>
-              <li>
-                <Link to="/">Login</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li>
-                <Link to="/admin">Admin</Link>
-              </li>
-            </ul>
-          </nav>
-          <p></p>
-          <Outlet />
-        </div>
-        
-      )
+  const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userdata"));
+    if (user) {
+      dispatch({
+        type: 'SET_USER',
+        payload: user
+      })
+
+      dispatch({
+        type: 'SET_IS_ADMIN',
+        payload: user.isAdmin
+      })
+    }
+  })
+
+  return (
+    <div>
+      <NavigationBar />
+      <Outlet />
+    </div>
+
+  )
 }
 
 export default App
