@@ -9,9 +9,9 @@ import axios from "axios";
 
 
 function Storefront() {
-    
+
     const [isOpen, setIsOpen] = useState(true)
-    
+
     const [selectedItem, setSelectedItem] = useState(null);
 
     const dispatch = useDispatch()
@@ -76,11 +76,11 @@ function Storefront() {
         fetchSpecialInventory();
     }, [dispatch]);
 
-//These are to get the inventory items from redux on page load with an empty array in case of failure
+    //These are to get the inventory items from redux on page load with an empty array in case of failure
     const regInventory = useSelector((state) =>
-        state.globalState.regInventory) || [];
+        state.globalState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory) || [];
+        state.globalState.specInventory || []) ;
 
 
     function openDrawerOnMain() {
@@ -96,42 +96,45 @@ function Storefront() {
         setSelectedItem(item);
     }
 
+    //TODO : add ability to update quanity in textbox + update quanity in general
+    //TODO : "Buy Now" subtracts points from user + subtract item from inventory + add item to history
+
+    function addToCartDrawer() {
+
+    }
+
     return (
         <body>
             <section className="">
                 <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
-                    <h2 className="text-xl text-center font-bold sm:text-3xl ">PokéShop</h2>
+                    
                     <div className="relative flex py-5">
                         <div className="flex-grow border-t-2 border-red-600"></div>
                     </div>
 
                     <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
-                        {/* Grid Start + item1 */}
-                        {/* add set widths for each itembox */}
+                        {/* Regular Inventory */}
                         {regInventory.map((reginv) => {
                             return (
                                 <Itembox
                                     key={reginv.itemId}
-                                    itemName={reginv.itemName}
-                                    itemPrice={reginv.itemPrice}
-                                    quantity={reginv.quantity}
-                                    imageUrl={reginv.imageUrl}
                                     onClick={() => handleItemClick(reginv)}
+                                    itemData={reginv}
                                 />
                             )
                         })}
-
                         {/* Special Item */}
                     </div>
                     <div className="mt-44 gap-x-12">
-                        <Specialbox
-                            key={specInventory.itemId}
-                            itemName={specInventory.itemName}
-                            itemPrice={specInventory.itemPrice}
-                            quantity={specInventory.quantity}
-                            imageUrl={specInventory.imageUrl}
-                            onClick={() => handleItemClick(specInventory)}
-                        />
+                        {specInventory.map((specinv) => {
+                            return (
+                                <Specialbox
+                                    key={specinv.itemId}
+                                    onClick={() => handleItemClick(specinv)}
+                                    itemData={specinv}
+                                />
+                            )
+                        })}
                         <ItemboxModal
                             isOpen={isOpen}
                             setIsOpen={setIsOpen}

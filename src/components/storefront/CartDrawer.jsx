@@ -1,12 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
+import ItemInCart from "./ItemInCart";
 
+// Utility function to calculate the cart total (same as calculateTotalPrice)
+function cartTotal(cartItems) {
+    return cartItems.reduce((total, item) => total + item.total, 0);
+}
 
 function CartDrawer() {
     const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
 
     const closeDrawer = () => {
-        console.log('Drawer close clicked');
         dispatch({
             type: `HANDLE_DRAWER`,
             payload: false
@@ -20,9 +26,7 @@ function CartDrawer() {
         });
     };
 
-    const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-
-    console.log('Drawer state:', drawer);
+    const totalPrice = Math.round(cartTotal(cartItems));
 
     if (!drawer) return null;
 
@@ -43,30 +47,26 @@ function CartDrawer() {
                     <h2 className="text-3xl text-center font-bold mb-2">Cart</h2>
                     <p className="text-center mb-10">@username</p>
 
-                    <ul className="space-y-4">
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Pokeball</p>
-                            <p>...5</p>
-                        </li>
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Great Ball</p>
-                            <p>...5</p>
-                        </li>
-                        <li className="flex justify-between text-lg ml-5">
-                            <p>Potion</p>
-                            <p>...5</p>
-                        </li>
+                    <ul className="space-y-4 overflow-scroll">
+                        {cartItems.map((itemInCart) => {
+                            return (
+                                <ItemInCart 
+                                    key={itemInCart.itemId}
+                                    itemData={itemInCart}
+                                />
+                            )
+                        })}
                     </ul>
                 </div>
-                <p className="flex text-2xl ml-8 mt-32 pb-10 space-y-5"> Total:  </p>
+                <p className="flex text-xl ml-8 mt-32 pb-10 space-y-5 font-weight"> 
+                    Total:  {totalPrice} points
+                </p>
                 <div className="mx-32">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                    <button className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
                         Buy Now
                     </button>
                 </div>
-
             </div>
-
         </div>
     );
 }

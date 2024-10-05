@@ -7,7 +7,7 @@ import Stock from "../itembox components/stock"
 
 function Specialbox(props) {
     const dispatch = useDispatch()
-
+    const {imageUrl, itemName, itemPrice, quantity} = props.itemData
     function openSpecialModal() {
         dispatch({
             type: `HANDLE_SPECIAL_MODAL`,
@@ -19,7 +19,7 @@ function Specialbox(props) {
         <div className="justify-end m-7 mt-10 group block overflow-hidden border border-gray-400 rounded-md" onClick={props.onClick}>
             <a role="button" onClick={openSpecialModal} className="block overflow-hidden">
                 <img
-                    src={props.imageUrl}
+                    src={imageUrl}
                     alt=""
                     className="h-[250px] object-contain w-full rounded-t-md bg-slate-200 "
                 />
@@ -27,7 +27,7 @@ function Specialbox(props) {
                     <div className="flex justify-between items-center">
                         <h3 className="text-lg">
                             <ItemName
-                                itemName={props.itemName}
+                                itemName={itemName}
                             />
                         </h3>
                         <span className="text-blue-500 hover:underline hover:underline-offset-2">
@@ -36,10 +36,10 @@ function Specialbox(props) {
                     </div>
                     <div className="flex justify-between mt-5">
                         <Points
-                            itemPrice={props.itemPrice}
+                            itemPrice={itemPrice}
                         />
                         <Stock
-                            quantity={props.quantity}
+                            quantity={quantity}
                         />
                     </div>
                 </div>

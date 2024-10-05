@@ -1,8 +1,20 @@
-function Addcart() {
+import { useDispatch } from "react-redux"
+
+
+function Addcart(props) {
+
+    const dispatch = useDispatch()
+
+
 
     function cartAdd (event) {
         event.stopPropagation() //makes the default unresponsive, so we can have our add to cart button, super cool.
         console.log('add to cart')
+        
+        dispatch({
+            type: `UPDATE_CART`,
+            payload: props.itemData
+        })
     }
 
     return (
