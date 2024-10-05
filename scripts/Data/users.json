@@ -39,7 +39,7 @@
         "password": "ag123",
         "firstName": "Aldo",
         "lastName": "G",
-        "points": 350,
+        "points": 20000,
         "profileImage": "https://randomuser.me/api/portraits/lego/6.jpg"
     },
     {
@@ -48,6 +48,6 @@
         "password": "dh123",
         "firstName": "Diego",
         "lastName": "Pie",
-        "points": 0
+        "points": 250
     }
 ]
