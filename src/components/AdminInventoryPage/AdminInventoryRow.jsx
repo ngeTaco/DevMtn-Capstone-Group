@@ -1,8 +1,11 @@
 import { useState, useRef } from "react";
 import axios from 'axios';
+import { useDispatch } from "react-redux";
 
 function AdminInventoryRow(props) {
     const [isEditing, setIsEditing] = useState(false);
+
+    const dispatch = useDispatch();
 
     const [itemName, setItemName] = useState(props.item.itemName);
     const [itemDescription, setItemDescription] = useState(props.item.itemDescription);
@@ -31,11 +34,17 @@ function AdminInventoryRow(props) {
     }
 
     async function handleDelete() {
+        setIsEditing(false);
+
         try {
             await axios.delete(`/api/inventory/${props.item.itemId}`);
         } catch (error) {
             console.error('Error deleting item:', error);
         }
+        dispatch({
+            type: "DELETE_ITEM",
+            payload: props.item.itemId
+        })
     }
 
 
