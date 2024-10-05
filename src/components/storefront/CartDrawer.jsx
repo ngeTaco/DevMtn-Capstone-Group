@@ -11,10 +11,8 @@ function CartDrawer() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-    console.log(cartItems);
 
     const closeDrawer = () => {
-        console.log('Drawer close clicked');
         dispatch({
             type: `HANDLE_DRAWER`,
             payload: false
