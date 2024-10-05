@@ -18,6 +18,8 @@ const Login = () => {
 
     if (res.data.success) {
 
+      localStorage.setItem("userdata", JSON.stringify(res.data.userObj))
+
       dispatch({
         type: 'SET_USER',
         payload: res.data.userObj
