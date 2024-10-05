@@ -62,7 +62,7 @@ function CartDrawer() {
                     Total:  {totalPrice} points
                 </p>
                 <div className="mx-32">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
                         Buy Now
                     </button>
                 </div>
