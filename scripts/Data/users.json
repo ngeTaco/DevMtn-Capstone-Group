@@ -9,28 +9,28 @@
     },
     {
         "isAdmin": true,
-        "username": "Normal Manager",
-        "password": "admin22",
+        "username": "Manager",
+        "password": "admin",
         "firstName": "Jace",
         "lastName": "H",
         "points": 0
     },
     {
         "isAdmin": false,
-        "username": "Fastest Prest in the West",
+        "username": "FastestPrest",
         "password": "pm123",
         "firstName": "Preston",
-        "lastName": "M",
+        "lastName": "Mitchell",
         "points": 5000,
         "profileImage": "https://images.unsplash.com/44/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg"
     },
     {
         "isAdmin": false,
-        "username": "FairyMary123",
+        "username": "FairyMary",
         "password": "mc123",
         "firstName": "Mary",
-        "lastName": "C",
-        "points": 8000,
+        "lastName": "Castorani",
+        "points": 10000,
         "profileImage": "https://images.unsplash.com/photo-1433162653888-a571db5ccccf"
     },
     {
@@ -38,16 +38,25 @@
         "username": "AldoSmallThings",
         "password": "ag123",
         "firstName": "Aldo",
-        "lastName": "G",
+        "lastName": "Gomez",
         "points": 20000,
         "profileImage": "https://randomuser.me/api/portraits/lego/6.jpg"
     },
     {
         "isAdmin": false,
-        "username": "Looking for the big old pie in the sky dream",
+        "username": "DiegoPie",
         "password": "dh123",
         "firstName": "Diego",
         "lastName": "Pie",
-        "points": 250
+        "points": 500
+    },
+    {
+        "isAdmin": false,
+        "username": "user",
+        "password": "123",
+        "firstName": "FirstName",
+        "lastName": "LastName",
+        "points": 200000,
+        "profileImage": "https://avatarfiles.alphacoders.com/186/186851.jpg"
     }
 ]
