@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 import ItemInCart from "./ItemInCart";
+import { useState } from "react";
 
 // Utility function to calculate the cart total (same as calculateTotalPrice)
 function cartTotal(cartItems) {
@@ -11,8 +12,10 @@ function CartDrawer() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-    const userInfo = useSelector((state) => {return state.globalState.userProfile})
-console.log("CART-ITEMS", cartItems)
+    const initialUserInfo = useSelector((state) => {return state.globalState.userProfile});
+    const [userInfo, setUserInfo] = useState(initialUserInfo);
+    const totalPrice = Math.round(cartTotal(cartItems));
+
     const closeDrawer = () => {
         dispatch({
             type: `HANDLE_DRAWER`,
@@ -27,8 +30,22 @@ console.log("CART-ITEMS", cartItems)
         });
     };
 
-    const totalPrice = Math.round(cartTotal(cartItems));
+    const handleCheckout = async () => {
+        if (userInfo.points >= totalPrice) {
+            const updatedPoints = userInfo.points - totalPrice;
+            setUserInfo({ ...userInfo, points: updatedPoints });
 
+            try {
+                await axios.post(`/api/user/${userInfo.userId}/points`, { points: updatedPoints });
+            } catch (error) {
+                console.error('Error updating points:', error);
+            }
+        } else {
+            alert('Not enough points');
+        }
+    };
+
+    console.log("CART-ITEMS", cartItems)
     if (!drawer) return null;
 
     return (
@@ -61,12 +78,13 @@ console.log("CART-ITEMS", cartItems)
                     </ul>
                 </div>
                 <p className="flex text-xl ml-8 mt-32 pb-10 space-y-5 font-weight">
-                    Grand Total: {totalPrice} points
+                    Grand Total: {totalPrice.toLocaleString()} points
                 </p>
                 <div className="mx-32">
                     <button
-                        className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
-                        Buy Now
+                        className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded"
+                        onClick={handleCheckout}>
+                        Pay Now
                     </button>
                 </div>
             </div>
@@ -76,7 +94,5 @@ console.log("CART-ITEMS", cartItems)
 
 export default CartDrawer;
 
-// Button needs to deduct Grand Total from user points
 // add items to user history
 // deduce items from inventory
-// cart display username and points

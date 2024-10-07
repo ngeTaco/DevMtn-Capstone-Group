@@ -30,6 +30,18 @@ userRouter.put('/:userId', async (req, res) => {
     res.json(userChange);
 })
 
+// PUT update points by userId
+userRouter.put('/:userId/points', async (req, res) => {
+    const { userId } = req.params;
+    const { points } = req.body;
+    const userChange = await User.findByPk(userId);
+
+    userChange.points = points;
+    
+    await userChange.save();
+    res.json(userChange);
+})
+
 // POST create new user requiring admin state, username, password, first and last name, and initial points amount
 userRouter.post('/new', async (req, res) => {
     const { isAdmin, username, password, firstName, lastName, points, profileImage } = req.body;
