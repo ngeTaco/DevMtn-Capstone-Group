@@ -69,7 +69,6 @@ function CartDrawer() {
         }
     };
 
-    console.log("CART-ITEMS", cartItems)
     if (!drawer) return null;
 
     return (
