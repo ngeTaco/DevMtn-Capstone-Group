@@ -24,8 +24,10 @@ function ItemInCart(props) {
                         className="mt-2 border rounded-md p-0.5 w-16 text-center"
                     />
                     <div className="flex space-x-5">
-                        <Minus />
-                        <Plus />
+                        <Minus 
+                        className='size-8'  />
+                        <Plus
+                        className='size-8' />
                     </div>
                 </div>
                 <div className="flex flex-col text-lg">

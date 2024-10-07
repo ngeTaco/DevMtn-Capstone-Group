@@ -39,7 +39,8 @@ function CartDrawer() {
             <div className={`fixed top-0 right-0 h-full w-96 bg-slate-200 shadow-lg`}>
                 <div className="flex justify-end p-4">
                     <button onClick={closeDrawer}>
-                        <XMark />
+                        <XMark
+                        className='size-8' />
                     </button>
                 </div>
 
