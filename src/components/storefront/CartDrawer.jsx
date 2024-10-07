@@ -11,7 +11,8 @@ function CartDrawer() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-
+    const userInfo = useSelector((state) => {return state.globalState.userProfile})
+console.log("CART-ITEMS", cartItems)
     const closeDrawer = () => {
         dispatch({
             type: `HANDLE_DRAWER`,
@@ -45,12 +46,13 @@ function CartDrawer() {
 
                 <div className="p-4">
                     <h2 className="text-3xl text-center font-bold mb-2">Cart</h2>
-                    <p className="text-center mb-10">@username</p>
+                    <p className="text-center mb-1">@{userInfo.username}</p>
+                    <p className="text-center mb-10">{userInfo.points.toLocaleString()} available points</p>
 
                     <ul className="space-y-4 overflow-scroll">
                         {cartItems.map((itemInCart) => {
                             return (
-                                <ItemInCart 
+                                <ItemInCart
                                     key={itemInCart.itemId}
                                     itemData={itemInCart}
                                 />
@@ -58,11 +60,12 @@ function CartDrawer() {
                         })}
                     </ul>
                 </div>
-                <p className="flex text-xl ml-8 mt-32 pb-10 space-y-5 font-weight"> 
-                    Total:  {totalPrice} points
+                <p className="flex text-xl ml-8 mt-32 pb-10 space-y-5 font-weight">
+                    Grand Total: {totalPrice} points
                 </p>
                 <div className="mx-32">
-                    <button className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
+                    <button
+                        className="bg-slate-700 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
                         Buy Now
                     </button>
                 </div>
@@ -72,3 +75,8 @@ function CartDrawer() {
 }
 
 export default CartDrawer;
+
+// Button needs to deduct Grand Total from user points
+// add items to user history
+// deduce items from inventory
+// cart display username and points
