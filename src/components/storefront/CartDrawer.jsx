@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 import ItemInCart from "./ItemInCart";
 import { useState } from "react";
+import axios from "axios";
 
 // Utility function to calculate the cart total (same as calculateTotalPrice)
 function cartTotal(cartItems) {
@@ -12,7 +13,7 @@ function CartDrawer() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-    const initialUserInfo = useSelector((state) => {return state.globalState.userProfile});
+    const initialUserInfo = useSelector((state) => { return state.globalState.userProfile });
     const [userInfo, setUserInfo] = useState(initialUserInfo);
     const totalPrice = Math.round(cartTotal(cartItems));
 
@@ -35,10 +36,17 @@ function CartDrawer() {
             const updatedPoints = userInfo.points - totalPrice;
             setUserInfo({ ...userInfo, points: updatedPoints });
 
+            const cartToHistory = cartItems.map(item => ({
+                userId: userInfo.userId,
+                itemId: item.cartItemKey.itemId,
+                shopperQuantity: item.quantity
+            }))
+
             try {
-                await axios.post(`/api/user/${userInfo.userId}/points`, { points: updatedPoints });
+                await axios.put(`/api/user/${userInfo.userId}/points`, { points: updatedPoints });
+                await axios.post(`/api/history/new`, cartToHistory);
             } catch (error) {
-                console.error('Error updating points:', error);
+                console.error('Error updating points or sending cart items to user history:', error);
             }
         } else {
             alert('Not enough points');
@@ -94,5 +102,5 @@ function CartDrawer() {
 
 export default CartDrawer;
 
-// add items to user history
+// not updating user points in profile, which resets it back initial value from profile's redux
 // deduce items from inventory
