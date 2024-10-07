@@ -16,6 +16,8 @@ function CartDrawer() {
     const initialUserInfo = useSelector((state) => { return state.globalState.userProfile });
     const [userInfo, setUserInfo] = useState(initialUserInfo);
     const totalPrice = Math.round(cartTotal(cartItems));
+    const regInventory = useSelector((state) => state.globalState.regInventory || []);
+    const specInventory = useSelector((state) => state.globalState.specInventory || []);
 
     const closeDrawer = () => {
         dispatch({
@@ -43,10 +45,24 @@ function CartDrawer() {
             }))
 
             try {
+                // Update user points
                 await axios.put(`/api/user/${userInfo.userId}/points`, { points: updatedPoints });
+                // Add cart items and quantities to user history
                 await axios.post(`/api/history/new`, cartToHistory);
+                // Update quantities in the inventory
+                for (const item of cartItems) {
+                    const itemId = item.cartItemKey.itemId;
+                    const regItem = regInventory[itemId];
+                    const specItem = specInventory[itemId];
+                    const currentQuantity = regItem ? regItem.quantity : specItem.quantity;
+
+                    const newQuantity = currentQuantity - item.quantity;
+                    await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
+                };
+                // Clear Cart and Grand Totals
+                
             } catch (error) {
-                console.error('Error updating points or sending cart items to user history:', error);
+                console.error('Error updating points, sending cart items to user history, or updating shop inventory:', error);
             }
         } else {
             alert('Not enough points');
@@ -103,4 +119,3 @@ function CartDrawer() {
 export default CartDrawer;
 
 // not updating user points in profile, which resets it back initial value from profile's redux
-// deduce items from inventory
