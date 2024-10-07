@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 
 
 function ItemboxModal(props) {
+  
   const dispatch = useDispatch()
-  console.log("modalProps", props)
   function modalOpen() {
 
     dispatch({

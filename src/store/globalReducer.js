@@ -11,7 +11,6 @@ const initialState = {
     cartDrawer: false,
     drawerContent: {}
 }
-/// {type:"UPDATE_CART", payload:cartItems} ///
 
 export function getAllItems(dispatch) {
     axios.get('/api/all/inventory').then(({ data }) => {
@@ -23,8 +22,6 @@ export function getAllItems(dispatch) {
 }
 
 export default function globalReducer(state = initialState, action) {
-    //console.log(action)
-    //console.log(state)
 
     switch (action.type) {
         case "UPDATE_CART":
@@ -70,20 +67,17 @@ export default function globalReducer(state = initialState, action) {
             }
 
         case "HANDLE_MODAL":
-            console.log(action.payload)
             return {
                 ...state,
                 itemModal: action.payload
             }
         case "HANDLE_SPECIAL_MODAL":
-            console.log(action.payload)
             return {
                 ...state,
                 itemModal: action.payload
 
             }
         case "HANDLE_DRAWER":
-            console.log(action.payload)
             return {
                 ...state,
                 cartDrawer: action.payload

@@ -69,7 +69,6 @@ function Storefront() {
 
     //Event handler for sending props to modal
     function handleItemClick(item) {
-        console.log("Item clicked:", item);
         setSelectedItem(item);
     }
 

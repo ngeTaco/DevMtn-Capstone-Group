@@ -3,8 +3,6 @@ const initialState = {
 }
 
 export default function storeReducer(state = initialState, action) {
-    //console.log(action)
-    //console.log(state)
 
     switch (action.type) {
         case 'UPDATE_CART': 
