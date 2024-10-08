@@ -54,9 +54,7 @@ function CartDrawer() {
                 // Update quantities in the inventory
                 for (const item of cartItems) {
                     const itemId = item.cartItemKey.itemId;
-                    const regItem = regInventory[itemId];
-                    const specItem = specInventory[itemId];
-                    const currentQuantity = regItem ? regItem.quantity : specItem.quantity;
+                    const currentQuantity = item.cartItemKey.quantity;
                     const newQuantity = currentQuantity - item.quantity;
 
                     await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
@@ -69,7 +67,9 @@ function CartDrawer() {
                 const updatedRegInventory = regInventory.map(item => {
                     const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
                     if (cartItem) {
-                        const newQuantity = item.quantity - cartItem.quantity;
+                        const currentQuantity = cartItem.cartItemKey.quantity;
+                        const newQuantity = currentQuantity - cartItem.quantity;
+
                         return { ...item, quantity: newQuantity };
                     }
                     return item;
@@ -84,7 +84,9 @@ function CartDrawer() {
                 const updatedSpecInventory = specInventory.map(item => {
                     const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
                     if (cartItem) {
-                        const newQuantity = item.quantity - cartItem.quantity;
+                        const currentQuantity = cartItem.cartItemKey.quantity;
+                        const newQuantity = currentQuantity - cartItem.quantity;
+
                         return { ...item, quantity: newQuantity };
                     }
                     return item;
