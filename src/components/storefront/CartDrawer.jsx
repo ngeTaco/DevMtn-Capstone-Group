@@ -61,8 +61,7 @@ function CartDrawer() {
                 };
                 // Clear cart in redux
                 dispatch({
-                    type: 'UPDATE_CART',
-                    payload: []
+                    type: 'RESET_CART'
                 });
                 // Update user points in redux
                 dispatch({
