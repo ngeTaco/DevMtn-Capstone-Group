@@ -1,15 +1,27 @@
-import { useDispatch } from "react-redux"
-import { Minus, Plus } from "../CommonComponents/icons"
-
+import { useDispatch } from "react-redux";
+import { Minus, Plus } from "../CommonComponents/icons";
 
 function ItemInCart(props) {
-    const { imageUrl, itemName, itemPrice } = props.itemData.cartItemKey
-    const { quantity, total } = props.itemData
-    console.log('props', props)
+    const { imageUrl, itemName, itemPrice } = props.itemData.cartItemKey;
+    const { quantity, total, id } = props.itemData; // add `id` for the item
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     
+    const minusOne = () => {
+        console.log('Minus button clicked, itemId:', id); // Debug log
+        dispatch({
+            type: 'DECRIMENT_ITEM',
+            payload: { itemId: id } // Pass the `itemId`
+        });
+    };
 
+    const plusOne = () => {
+        console.log('Plus button clicked, itemId:', id); // Debug log
+        dispatch({
+            type: 'UPDATE_CART',
+            payload: { itemId: id } // Pass the `itemId`
+        });
+    };
 
     return (
         <div className="flex flex-col text-lg ml-8">
@@ -20,14 +32,19 @@ function ItemInCart(props) {
                         type="number"
                         id="minimum"
                         min="1"
-                        placeholder={quantity}
+                        value={quantity} // Use `value` instead of `placeholder`
                         className="mt-2 border rounded-md p-0.5 w-16 text-center"
+                        readOnly
                     />
                     <div className="flex space-x-5">
-                        <Minus 
-                        className='size-8'  />
+                        <Minus
+                            className="size-8"
+                            onClick={minusOne}  
+                        />
                         <Plus
-                        className='size-8' />
+                            className="size-8" 
+                            onClick={plusOne}
+                        />
                     </div>
                 </div>
                 <div className="flex flex-col text-lg">
@@ -37,8 +54,7 @@ function ItemInCart(props) {
                 </div>
             </li>
         </div>
-
-    )
+    );
 }
 
-export default ItemInCart
+export default ItemInCart;

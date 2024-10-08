@@ -26,6 +26,8 @@ function CartDrawer() {
         });
     };
 
+
+
     const totalPrice = Math.round(cartTotal(cartItems));
 
     if (!drawer) return null;
