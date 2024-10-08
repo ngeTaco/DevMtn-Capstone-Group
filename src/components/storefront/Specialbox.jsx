@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import Addcart from "../itembox components/addcart"
+import Addcart from "../itembox components/Addcart"
 import ItemName from "../itembox components/ItemName"
 import Points from "../itembox components/points"
 import Stock from "../itembox components/stock"
@@ -7,7 +7,7 @@ import Stock from "../itembox components/stock"
 
 function Specialbox(props) {
     const dispatch = useDispatch()
-    const {imageUrl, itemName, itemPrice, quantity} = props.itemData
+    const { imageUrl, itemName, itemPrice, quantity } = props.itemData
     function openSpecialModal() {
         dispatch({
             type: `HANDLE_SPECIAL_MODAL`,
@@ -31,7 +31,9 @@ function Specialbox(props) {
                             />
                         </h3>
                         <span className="text-blue-500 hover:underline hover:underline-offset-2">
-                            <Addcart />
+                            <Addcart
+                                itemData={props.itemData}
+                            />
                         </span>
                     </div>
                     <div className="flex justify-between mt-5">
