@@ -21,16 +21,6 @@ export function getAllItems(dispatch) {
     })
 }
 
-export const updateRegInventory = (itemId, newQuantity) => ({
-    type: 'UPDATE_REG_INVENTORY',
-    payload: { itemId, newQuantity }
-});
-
-export const updateSpecInventory = (itemId, newQuantity) => ({
-    type: 'UPDATE_SPEC_INVENTORY',
-    payload: { itemId, newQuantity }
-});
-
 export default function globalReducer(state = initialState, action) {
 
     switch (action.type) {
@@ -57,29 +47,6 @@ export default function globalReducer(state = initialState, action) {
                 ...state,
                 specInventory: [action.payload]
             }
-
-        case 'UPDATE_REG_INVENTORY':
-            return {
-                ...state,
-                regInventory: {
-                    ...state.regInventory,
-                    [action.payload.itemId]: {
-                        ...state.regInventory[action.payload.itemId],
-                        quantity: action.payload.newQuantity
-                    }
-                }
-            };
-        case 'UPDATE_SPEC_INVENTORY':
-            return {
-                ...state,
-                specInventory: {
-                    ...state.specInventory,
-                    [action.payload.itemId]: {
-                        ...state.specInventory[action.payload.itemId],
-                        quantity: action.payload.newQuantity
-                    }
-                }
-            };
 
         case "SET_USER":
             return {
