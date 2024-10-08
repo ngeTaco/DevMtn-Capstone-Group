@@ -59,8 +59,16 @@ function CartDrawer() {
                     const newQuantity = currentQuantity - item.quantity;
                     await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
                 };
-                // Clear Cart and Grand Totals
-                
+                // Clear cart in redux
+                dispatch({
+                    type: 'UPDATE_CART',
+                    payload: []
+                });
+                // Update user points in redux
+                dispatch({
+                    type: 'SET_USER',
+                    payload: { ...userInfo, points: updatedPoints }
+                });
             } catch (error) {
                 console.error('Error updating points, sending cart items to user history, or updating shop inventory:', error);
             }
