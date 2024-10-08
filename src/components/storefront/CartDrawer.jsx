@@ -56,7 +56,7 @@ function CartDrawer() {
                     const specItem = specInventory[itemId];
                     const currentQuantity = regItem ? regItem.quantity : specItem.quantity;
                     const newQuantity = currentQuantity - item.quantity;
-                    
+
                     await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
 
                 };
@@ -64,14 +64,44 @@ function CartDrawer() {
                 dispatch({
                     type: 'RESET_CART'
                 });
-
+//NEW
                 // Update inventories
+                // Update regular inventory
+            const updatedRegInventory = regInventory.map(item => {
+                const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
+                if (cartItem) {
+                    const newQuantity = item.quantity - cartItem.quantity;
+                    return { ...item, quantity: newQuantity };
+                }
+                return item;
+            });
 
+            dispatch({
+                type: 'UPDATE_REG_INVENTORY',
+                payload: updatedRegInventory
+            });
+
+            // Update special inventory
+            const updatedSpecInventory = specInventory.map(item => {
+                const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
+                if (cartItem) {
+                    const newQuantity = item.quantity - cartItem.quantity;
+                    return { ...item, quantity: newQuantity };
+                }
+                return item;
+            });
+
+            dispatch({
+                type: 'UPDATE_SPEC_INVENTORY',
+                payload: updatedSpecInventory
+            });
+//NEW END
                 // Update user points in redux
                 dispatch({
                     type: 'SET_USER',
                     payload: { ...userInfo, points: updatedPoints }
                 });
+                alert('Purchase Successful')
             } catch (error) {
                 console.error('Error updating points, sending cart items to user history, or updating shop inventory:', error);
             }
