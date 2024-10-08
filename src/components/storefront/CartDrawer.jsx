@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { updateRegInventory, updateSpecInventory } from "../../store/globalReducer.js";
 import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
 import ItemInCart from "./ItemInCart";
 import { useState } from "react";
@@ -58,11 +59,20 @@ function CartDrawer() {
 
                     const newQuantity = currentQuantity - item.quantity;
                     await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
+
+                    // Update item quantities in redux
+
+                    if (regItem) {
+                        dispatch(updateRegInventory(itemId, newQuantity));
+                    } else if (specItem) {
+                        dispatch(updateSpecInventory(itemId, newQuantity));
+                    }
                 };
                 // Clear cart in redux
                 dispatch({
                     type: 'RESET_CART'
                 });
+
                 // Update user points in redux
                 dispatch({
                     type: 'SET_USER',
