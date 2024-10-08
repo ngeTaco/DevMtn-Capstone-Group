@@ -20,7 +20,7 @@ export function getAllItems(dispatch) {
         })
     })
 }
-//NEW
+
 export const updateRegInventory = (inventory) => ({
     type: 'UPDATE_REG_INVENTORY',
     payload: inventory
@@ -30,7 +30,7 @@ export const updateSpecInventory = (inventory) => ({
     type: 'UPDATE_SPEC_INVENTORY',
     payload: inventory
 });
-//NEW END
+
 export default function globalReducer(state = initialState, action) {
 
     switch (action.type) {
@@ -57,18 +57,19 @@ export default function globalReducer(state = initialState, action) {
                 ...state,
                 specInventory: [action.payload]
             }
-            //NEW
-            case 'UPDATE_REG_INVENTORY':
-                return {
-                    ...state,
-                    regInventory: action.payload
-                };
-            case 'UPDATE_SPEC_INVENTORY':
-                return {
-                    ...state,
-                    specInventory: action.payload
-                };
-                //NEW END
+
+        case 'UPDATE_REG_INVENTORY':
+            return {
+                ...state,
+                regInventory: action.payload
+            };
+
+        case 'UPDATE_SPEC_INVENTORY':
+            return {
+                ...state,
+                specInventory: action.payload
+            };
+
         case "SET_USER":
             return {
                 ...state,

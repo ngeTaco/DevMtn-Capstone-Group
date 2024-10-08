@@ -45,6 +45,8 @@ function CartDrawer() {
             }))
 
             try {
+                // Updates to Database
+
                 // Update user points
                 await axios.put(`/api/user/${userInfo.userId}/points`, { points: updatedPoints });
                 // Add cart items and quantities to user history
@@ -58,50 +60,55 @@ function CartDrawer() {
                     const newQuantity = currentQuantity - item.quantity;
 
                     await axios.put(`/api/inventory/${itemId}/quantity`, { quantity: newQuantity });
-
                 };
-                // Clear cart in redux
-                dispatch({
-                    type: 'RESET_CART'
-                });
-//NEW
+
+                // Updates to Redux
+
                 // Update inventories
                 // Update regular inventory
-            const updatedRegInventory = regInventory.map(item => {
-                const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
-                if (cartItem) {
-                    const newQuantity = item.quantity - cartItem.quantity;
-                    return { ...item, quantity: newQuantity };
-                }
-                return item;
-            });
+                const updatedRegInventory = regInventory.map(item => {
+                    const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
+                    if (cartItem) {
+                        const newQuantity = item.quantity - cartItem.quantity;
+                        return { ...item, quantity: newQuantity };
+                    }
+                    return item;
+                });
 
-            dispatch({
-                type: 'UPDATE_REG_INVENTORY',
-                payload: updatedRegInventory
-            });
+                dispatch({
+                    type: 'UPDATE_REG_INVENTORY',
+                    payload: updatedRegInventory
+                });
 
-            // Update special inventory
-            const updatedSpecInventory = specInventory.map(item => {
-                const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
-                if (cartItem) {
-                    const newQuantity = item.quantity - cartItem.quantity;
-                    return { ...item, quantity: newQuantity };
-                }
-                return item;
-            });
+                // Update special inventory
+                const updatedSpecInventory = specInventory.map(item => {
+                    const cartItem = cartItems.find(cartItem => cartItem.cartItemKey.itemId === item.itemId);
+                    if (cartItem) {
+                        const newQuantity = item.quantity - cartItem.quantity;
+                        return { ...item, quantity: newQuantity };
+                    }
+                    return item;
+                });
 
-            dispatch({
-                type: 'UPDATE_SPEC_INVENTORY',
-                payload: updatedSpecInventory
-            });
-//NEW END
+                dispatch({
+                    type: 'UPDATE_SPEC_INVENTORY',
+                    payload: updatedSpecInventory
+                });
+
                 // Update user points in redux
                 dispatch({
                     type: 'SET_USER',
                     payload: { ...userInfo, points: updatedPoints }
                 });
-                alert('Purchase Successful')
+
+                // Clear cart in redux
+                dispatch({
+                    type: 'RESET_CART'
+                });
+
+                // Checkout clean up, let user know of success and close drawer
+                alert('Purchase Successful');
+                closeDrawer();
             } catch (error) {
                 console.error('Error updating points, sending cart items to user history, or updating shop inventory:', error);
             }
@@ -157,5 +164,3 @@ function CartDrawer() {
 }
 
 export default CartDrawer;
-
-// not updating user points in profile, which resets it back initial value from profile's redux
