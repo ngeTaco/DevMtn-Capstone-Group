@@ -36,7 +36,7 @@ function ProfilePage() {
         return state.globalState.userProfile
     })
 
-    if (loginStatus || Object.keys(loginStatus).length === 0) return null;
+    if (!loginStatus || Object.keys(loginStatus).length === 0) return null;
 
     return (
         <div className="h-auto bg-gray-200  dark:bg-gray-800   flex flex-wrap items-center  justify-center  ">

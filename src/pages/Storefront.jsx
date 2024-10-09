@@ -75,7 +75,7 @@ function Storefront() {
         return state.globalState.userProfile
     })
 
-    if (loginStatus || Object.keys(loginStatus).length === 0) return null;
+    if (!loginStatus || Object.keys(loginStatus).length === 0) return null;
 
     return (
         <body>
