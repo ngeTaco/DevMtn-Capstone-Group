@@ -6,16 +6,13 @@ import AdminInventoryAddItem from "./components/AdminInventoryPage/AdminInventor
 import { useDispatch, useSelector } from "react-redux";
 import { getAllItems } from "./store/globalReducer.js"
 
-
 function AdminInventory() {
   const dispatch = useDispatch()
-  const [allItems, setAllItems] = useState([]);
+
+  const allInventoryItems = useSelector((state) => state.globalState.allItems)
 
   useEffect(() => {
     dispatch(getAllItems)
-    const requestItems = axios.get('/api/all/inventory').then(({ data }) => {
-      setAllItems(data)
-    })
   },
     []
   )
@@ -28,7 +25,7 @@ function AdminInventory() {
   return (
     <div className="flex gap-6">
       < AdminInventoryTable
-        allItems={allItems}
+        allItems={allInventoryItems}
       />
       < AdminInventoryAddItem />
     </div>
