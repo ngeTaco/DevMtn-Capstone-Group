@@ -3,7 +3,7 @@ import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } 
 import Storefront from './pages/Storefront.jsx'
 import Login from './pages/Login.jsx'
 import ProfilePage from './pages/Profile.jsx'
-import AdminInventory from './AdminInventory.jsx'
+import AdminInventory from './pages/AdminInventory.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 
 

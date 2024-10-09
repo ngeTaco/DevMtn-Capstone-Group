@@ -1,10 +1,10 @@
-import AdminInventoryRow from "./components/AdminInventoryPage/AdminInventoryRow.jsx";
-import AdminInventoryTable from "./components/AdminInventoryPage/AdminInventoryTable.jsx";
+import AdminInventoryRow from "../components/AdminInventoryPage/AdminInventoryRow.jsx";
+import AdminInventoryTable from "../components/AdminInventoryPage/AdminInventoryTable.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AdminInventoryAddItem from "./components/AdminInventoryPage/AdminInventoryAddItem.jsx";
+import AdminInventoryAddItem from "../components/AdminInventoryPage/AdminInventoryAddItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllItems } from "./store/globalReducer.js"
+import { getAllItems } from "../store/globalReducer.js"
 
 function AdminInventory() {
   const dispatch = useDispatch()
