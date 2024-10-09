@@ -119,6 +119,7 @@ function Storefront() {
                     <div>
                         <button onClick={openDrawerOnMain}>
                             <ShoppingCartIcon
+                                className='size-8'
                                 role="button"
 
                             />

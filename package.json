@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "init": "dropdb --if-exists pointshop && createdb pointshop",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
