@@ -16,13 +16,13 @@ export default function Router() {
         createRoutesFromElements(
             <Route path='/' element={<App />} errorElement={<ErrorPage />}>
                 <Route path='/' element={<Login />} />
-                {user && (
-                    <>
+                {/* {user && ( */}
+                    {/* <> */}
                         <Route path='/admin' element={<AdminInventory />} />
                         <Route path='/shop' element={<Storefront />} />
                         <Route path='/profile' element={<ProfilePage />} />
-                    </>
-                )}
+                    {/* </>
+                )} */}
             </Route>
         )
     )
