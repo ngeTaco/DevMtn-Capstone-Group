@@ -6,7 +6,6 @@ import CartDrawer from "../components/storefront/CartDrawer.jsx";
 import { ShoppingCartIcon } from "../components/CommonComponents/icons.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { getAllItems } from "../store/globalReducer.js";
 
 
 function Storefront() {

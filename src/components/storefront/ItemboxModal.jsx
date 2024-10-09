@@ -1,8 +1,7 @@
-import ItemName from "../itembox components/ItemName";
-import Points from "../itembox components/points";
-import Stock from "../itembox components/stock";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import ItemName from "../itembox components/ItemName.jsx";
+import Points from "../itembox components/Points.jsx";
+import Stock from "../itembox components/Stock.jsx";
+import { useSelector, useDispatch } from "react-redux";
 
 
 

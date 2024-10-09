@@ -1,7 +1,7 @@
-import Addcart from "../itembox components/Addcart"
-import ItemName from "../itembox components/ItemName"
-import Points from "../itembox components/points"
-import Stock from "../itembox components/stock"
+import Addcart from "../itembox components/Addcart.jsx"
+import ItemName from "../itembox components/ItemName.jsx"
+import Points from "../itembox components/Points.jsx"
+import Stock from "../itembox components/Stock.jsx"
 import { useDispatch } from "react-redux"
 
 function Itembox(props) {

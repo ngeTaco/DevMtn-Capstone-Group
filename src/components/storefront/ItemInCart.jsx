@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Minus, Plus } from "../CommonComponents/icons";
+import { Minus, Plus } from "../CommonComponents/icons.jsx";
 
 function ItemInCart(props) {
     const { imageUrl, itemName, itemPrice } = props.itemData.cartItemKey;

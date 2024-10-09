@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { ShoppingCartIcon, XMark } from "../CommonComponents/icons";
-import ItemInCart from "./ItemInCart";
+import { ShoppingCartIcon, XMark } from "../CommonComponents/icons.jsx";
+import ItemInCart from "./ItemInCart.jsx";
 import { useState } from "react";
 import axios from "axios";
 
