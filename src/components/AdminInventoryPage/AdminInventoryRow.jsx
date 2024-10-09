@@ -23,7 +23,6 @@ function AdminInventoryRow(props) {
             quantity: parseInt(itemQuantity),
             isSpecialItem: isSpecial === "True"
         };
-        console.log(updatedItemData)
 
         try {
             const { data } = await axios.put(`/api/inventory/${props.item.itemId}`, updatedItemData);

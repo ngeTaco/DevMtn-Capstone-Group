@@ -2,7 +2,6 @@ import AdminInventoryRow from "./AdminInventoryRow"
 import { useState } from "react";
 
 function AdminInventoryTable(props, { initialInventoryList }) {
-    console.log(props.allItems)
     
     return (
         <div>
