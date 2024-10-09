@@ -1,4 +1,5 @@
 import { isAllOf } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -8,27 +9,28 @@ function AdminInventoryAddItem() {
     const dispatch = useDispatch()
 
 
-    const [addingItem, setAddingItem] = useState({
-        itemName: "",
-        itemPrice: "",
-        itemQuantity: "",
-        itemDescription: "",
-        isSpecial: false
-    })
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-       
+
         console.dir(itemPriceRef.current.value)
         const formData =
         {
-            itemName: itemName.current.value,
-            itemPrice: itemPrice.current.value,
-            itemQuantity: itemQuantity.current.value,
-            itemDescription: itemDescription.current.value,
-            isSpecial: isSpecial.current.checked
+            itemName: itemNameRef.current.value,
+            itemPrice: itemPriceRef.current.value,
+            quantity: itemQuantityRef.current.value,
+            itemDescription: itemDescriptionRef.current.value,
+            isSpecialItem: isSpecialRef.current.checked
+        }
+
+        const { data } = await axios.post('/api/inventory/new', formData)
+        if (data.success) {
+            dispatch({
+                type: 'ADD_ITEM',
+                payload: data.newItem
+            })
         }
     }
+
     ////ADD REFS TO EACH OF THE ITEMS////
 
     const itemNameRef = useRef(null);
@@ -36,7 +38,6 @@ function AdminInventoryAddItem() {
     const itemQuantityRef = useRef(null);
     const itemDescriptionRef = useRef(null);
     const isSpecialRef = useRef(null);
-
 
 
     return (
@@ -99,7 +100,7 @@ function AdminInventoryAddItem() {
                 <div>
                     <button
                         type="submit"
-                        className="w-full py-2 px-4 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        className="w-full py-2 px-4 bg-slate-700 text-white font-bold rounded-md hover:bg-blue-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     >
                         Add Item
                     </button>

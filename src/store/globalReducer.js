@@ -27,6 +27,21 @@ export default function globalReducer(state = initialState, action) {
     //console.log(state)
 
     switch (action.type) {
+        case "ADD_ITEM":
+            return {
+                ...state,
+                allItems: [...state.allItems, action.payload]
+            }
+
+        case "DELETE_ITEM":
+            const updatedAllItems = [...state.allItems]
+            const index = updatedAllItems.findIndex((item) => item.itemId === action.payload) 
+            updatedAllItems.splice(index, 1)
+            return {
+                ...state, 
+                allItems: updatedAllItems
+            }
+
         case "UPDATE_CART":
             return {
                 ...state,

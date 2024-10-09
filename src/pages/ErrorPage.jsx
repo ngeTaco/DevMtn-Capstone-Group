@@ -8,9 +8,11 @@ function ErrorPage() {
         if (error.response.status === 401) {
             return (
                 <>
+
                     <h1 className="font-semibold text-xl tracking-tight">Oops!</h1>
                     <p className="font-semibold text-xl tracking-tight">You must be logged in to do that.</p>
                     <Link to="/" className="text-xl tracking-tight">Click here to go back to the homepage</Link>
+
                 </>
             );
         }
