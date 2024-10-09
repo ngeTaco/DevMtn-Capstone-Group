@@ -58,13 +58,14 @@ function ItemInCart(props) {
                 <div className="flex flex-col text-lg">
                     <p>{itemName}</p>
                     <p>{itemPrice}</p>
-                    <button>
-                        <Trash
-                        className="size-8"
-                        onClick={removeItem}
-                        /> 
-                    </button>
                     <p className="whitespace-nowrap">Total: {total}</p>
+                </div>
+                <div>
+                    <button>
+                        <Trash 
+                        className="size-6 space-x-8"
+                        onClick={removeItem}/>
+                    </button>
                 </div>
             </li>
         </div>
