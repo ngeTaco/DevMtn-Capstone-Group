@@ -35,7 +35,7 @@ export default function globalReducer(state = initialState, action) {
 
         case "DELETE_ITEM":
             const updatedAllItems = [...state.allItems]
-            const index = updatedAllItems.indexOf((item) => item.itemId === action.payload) 
+            const index = updatedAllItems.findIndex((item) => item.itemId === action.payload) 
             updatedAllItems.splice(index, 1)
             return {
                 ...state, 
