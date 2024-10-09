@@ -8,7 +8,7 @@ import 'dotenv/config'
 import appRouter from "./routes/index.js";
 
 const app = express();
-const PORT = process.env.PORT || 5091;
+const PORT = process.env.PORT || 5090;
 
 ViteExpress.config({
     printViteDevServerHost: true

@@ -9,7 +9,6 @@ function Addcart(props) {
 
     function cartAdd (event) {
         event.stopPropagation() //makes the default unresponsive, so we can have our add to cart button, super cool.
-        console.log('add to cart')
         
         dispatch({
             type: `UPDATE_CART`,

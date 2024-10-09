@@ -48,10 +48,24 @@ inventoryRouter.put('/:itemId', async (req, res) => {
     itemUpdate.imageUrl = imageUrl;
     itemUpdate.quantity = quantity;
     itemUpdate.isSpecialItem = isSpecialItem;
-    
+
     await itemUpdate.save();
     res.json(itemUpdate);
 })
+
+// PUT update item stock by itemId
+inventoryRouter.put('/:itemId/quantity', async (req, res) => {
+    const { itemId } = req.params;
+    const { quantity } = req.body;
+    const itemUpdate = await Inventory.findByPk(itemId);
+
+    itemUpdate.itemId = itemId;
+    itemUpdate.quantity = quantity;
+
+    await itemUpdate.save();
+    res.json(itemUpdate);
+})
+
 
 // POST create new item requiring name, description, price, image, quantity, and special item state
 // POST create new item requiring name, description, price, image, quantity, and special item state

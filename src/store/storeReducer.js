@@ -3,8 +3,16 @@ const initialState = {
 };
 
 export default function storeReducer(state = initialState, action) {
+
     switch (action.type) {
-        case 'UPDATE_CART': 
+
+        case 'RESET_CART':
+            return {
+                ...state,
+                cartItems: initialState.cartItems
+            };
+
+        case 'UPDATE_CART':
             const itemToAdd = action.payload;
             const itemToUpdate = state.cartItems.find(
                 (itemInCart) => itemInCart.id === itemToAdd.itemId
@@ -25,9 +33,10 @@ export default function storeReducer(state = initialState, action) {
                             item.quantity++;
                             item.total = item.quantity * item.cartItemKey.itemPrice;
                         }
-                        return item;
+                        return item
+
                     })
-                };
+                }
             } else {
                 return {
                     ...state,
