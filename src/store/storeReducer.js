@@ -62,6 +62,23 @@ export default function storeReducer(state = initialState, action) {
             }
             return state;
 
+            case 'REMOVE_ITEM':
+                const itemToRemove = state.cartItems.find(
+                    (itemInCart) => itemInCart.id === action.payload.itemId
+                );
+                
+                if (itemToRemove) {
+                    return {
+                        ...state,
+                        cartItems: state.cartItems.filter(
+                            (item) => item.id !== action.payload.itemId 
+                        )
+                    };
+                }
+                
+                return state;
+            
+
         default:
             return state;
     }
