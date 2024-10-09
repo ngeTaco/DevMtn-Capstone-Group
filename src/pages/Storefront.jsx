@@ -56,7 +56,7 @@ function Storefront() {
     const regInventory = useSelector((state) =>
         state.globalState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory || []) ;
+        state.globalState.specInventory || []);
 
 
     function openDrawerOnMain() {
@@ -71,17 +71,17 @@ function Storefront() {
         setSelectedItem(item);
     }
 
-    //TODO : add ability to update quanity in textbox + update quanity in general
+    const loginStatus = useSelector((state) => {
+        return state.globalState.userProfile
+    })
 
-    function addToCartDrawer() {
-
-    }
+    if (loginStatus || Object.keys(loginStatus).length === 0) return null;
 
     return (
         <body>
             <section className="">
                 <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
-                    
+
                     <div className="relative flex py-5">
                         <div className="flex-grow border-t-2 border-red-600"></div>
                     </div>

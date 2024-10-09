@@ -12,10 +12,10 @@ export default function NavigationBar() {
 
     const handleLogout = async (e) => {
         e.preventDefault();
-        localStorage.removeItem('userdata');
+        navigate('/');
         const res = await axios.post('/api/auth/logout');
         if (res.data.success) {
-            navigate('/');
+            localStorage.removeItem('userdata');
             dispatch({
                 type: 'RESET_USER'
             })
