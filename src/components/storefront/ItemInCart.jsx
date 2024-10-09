@@ -8,7 +8,7 @@ function ItemInCart(props) {
     const dispatch = useDispatch();
     
     const minusOne = () => {
-        console.log('Minus button clicked, itemId:', id); // Debug log
+
         dispatch({
             type: 'DECRIMENT_ITEM',
             payload: { itemId: id } 
@@ -16,7 +16,7 @@ function ItemInCart(props) {
     };
 
     const plusOne = () => {
-        console.log('Plus button clicked, itemId:', id); // Debug log
+        
         dispatch({
             type: 'UPDATE_CART',
             payload: { itemId: id }
@@ -24,7 +24,7 @@ function ItemInCart(props) {
     };
 
     const removeItem = () => {
-        console.log('clicked remove')
+        
         dispatch({
             type: 'REMOVE_ITEM',
             payload: {itemId: id}
