@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize';
+import 'dotenv/config'
 
 async function connectToDB(dbURI) {
     console.log(`Connecting to DB: ${dbURI}`);
@@ -8,6 +9,15 @@ async function connectToDB(dbURI) {
         define: {
             underscored: true,
             timestamps: false,
+        },
+        dialect: "postgres",
+        dialectOptions: {
+            ssl: process.env.RENDER_PG_URL ? {
+                require: true,
+                rejectUnauthorized: false
+            }
+                :
+                false
         },
     });
 
@@ -21,6 +31,6 @@ async function connectToDB(dbURI) {
     return sequelize;
 }
 
-const db = await connectToDB('postgresql:///pointshop');
+const db = await connectToDB(process.env.RENDER_PG_URL || 'postgresql:///pointshop');
 
 export default db;
