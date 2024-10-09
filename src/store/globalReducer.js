@@ -42,10 +42,10 @@ export default function globalReducer(state = initialState, action) {
 
         case "DELETE_ITEM":
             const updatedAllItems = [...state.allItems]
-            const index = updatedAllItems.findIndex((item) => item.itemId === action.payload) 
+            const index = updatedAllItems.findIndex((item) => item.itemId === action.payload)
             updatedAllItems.splice(index, 1)
             return {
-                ...state, 
+                ...state,
                 allItems: updatedAllItems
             }
 
@@ -89,6 +89,12 @@ export default function globalReducer(state = initialState, action) {
             return {
                 ...state,
                 userProfile: action.payload
+            }
+
+        case "RESET_USER":
+            return {
+                ...state,
+                userProfile: initialState.userProfile
             }
 
         case "SET_IS_ADMIN":
