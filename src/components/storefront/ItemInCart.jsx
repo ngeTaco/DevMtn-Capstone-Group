@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Minus, Plus } from "../CommonComponents/icons";
+import { Minus, Plus, Trash } from "../CommonComponents/icons";
 
 function ItemInCart(props) {
     const { imageUrl, itemName, itemPrice } = props.itemData.cartItemKey;
@@ -11,7 +11,7 @@ function ItemInCart(props) {
         console.log('Minus button clicked, itemId:', id); // Debug log
         dispatch({
             type: 'DECRIMENT_ITEM',
-            payload: { itemId: id } // Pass the `itemId`
+            payload: { itemId: id } 
         });
     };
 
@@ -19,9 +19,17 @@ function ItemInCart(props) {
         console.log('Plus button clicked, itemId:', id); // Debug log
         dispatch({
             type: 'UPDATE_CART',
-            payload: { itemId: id } // Pass the `itemId`
+            payload: { itemId: id }
         });
     };
+
+    const removeItem = () => {
+        console.log('clicked remove')
+        dispatch({
+            type: 'REMOVE_ITEM',
+            payload: {itemId: id}
+        })
+    }
 
     return (
         <div className="flex flex-col text-lg ml-8">
@@ -50,6 +58,12 @@ function ItemInCart(props) {
                 <div className="flex flex-col text-lg">
                     <p>{itemName}</p>
                     <p>{itemPrice}</p>
+                    <button>
+                        <Trash
+                        className="size-8"
+                        onClick={removeItem}
+                        /> 
+                    </button>
                     <p className="whitespace-nowrap">Total: {total}</p>
                 </div>
             </li>

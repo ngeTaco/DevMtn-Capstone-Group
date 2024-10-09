@@ -4,7 +4,7 @@ const initialState = {
 
 export default function storeReducer(state = initialState, action) {
     switch (action.type) {
-        case 'UPDATE_CART': 
+        case 'UPDATE_CART':
             const itemToAdd = action.payload;
             const itemToUpdate = state.cartItems.find(
                 (itemInCart) => itemInCart.id === itemToAdd.itemId
@@ -52,6 +52,23 @@ export default function storeReducer(state = initialState, action) {
                 };
             }
             return state;
+
+            case 'REMOVE_ITEM':
+                const itemToRemove = state.cartItems.find(
+                    (itemInCart) => itemInCart.id === action.payload.itemId
+                );
+                
+                if (itemToRemove) {
+                    return {
+                        ...state,
+                        cartItems: state.cartItems.filter(
+                            (item) => item.id !== action.payload.itemId 
+                        )
+                    };
+                }
+                
+                return state;
+            
 
         default:
             return state;
