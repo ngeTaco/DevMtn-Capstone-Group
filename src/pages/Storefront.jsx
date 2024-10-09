@@ -56,7 +56,7 @@ function Storefront() {
     const regInventory = useSelector((state) =>
         state.globalState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory || []) ;
+        state.globalState.specInventory || []);
 
 
     function openDrawerOnMain() {
@@ -78,56 +78,58 @@ function Storefront() {
     }
 
     return (
-        <body>
-            <section className="">
-                <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
-                    
-                    <div className="relative flex py-5">
-                        <div className="flex-grow border-t-2 border-red-600"></div>
-                    </div>
+        <div>
+            <body>
+                <section className="">
+                    <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
 
-                    <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
-                        {/* Regular Inventory */}
-                        {regInventory.map((reginv) => {
-                            return (
-                                <Itembox
-                                    key={reginv.itemId}
-                                    onClick={() => handleItemClick(reginv)}
-                                    itemData={reginv}
-                                />
-                            )
-                        })}
-                        {/* Special Item */}
-                    </div>
-                    <div className="mt-44 gap-x-12">
-                        {specInventory.map((specinv) => {
-                            return (
-                                <Specialbox
-                                    key={specinv.itemId}
-                                    onClick={() => handleItemClick(specinv)}
-                                    itemData={specinv}
-                                />
-                            )
-                        })}
-                        <ItemboxModal
-                            isOpen={isOpen}
-                            setIsOpen={setIsOpen}
-                            item={selectedItem}
-                        />
-                    </div>
-                    <div>
-                        <button onClick={openDrawerOnMain}>
-                            <ShoppingCartIcon
-                                className='size-8'
-                                role="button"
+                        <div className="relative flex py-5">
+                            <div className="flex-grow border-t-2 border-red-600"></div>
+                        </div>
 
+                        <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
+                            {/* Regular Inventory */}
+                            {regInventory.map((reginv) => {
+                                return (
+                                    <Itembox
+                                        key={reginv.itemId}
+                                        onClick={() => handleItemClick(reginv)}
+                                        itemData={reginv}
+                                    />
+                                )
+                            })}
+                            {/* Special Item */}
+                        </div>
+                        <div className="mt-44 gap-x-12">
+                            {specInventory.map((specinv) => {
+                                return (
+                                    <Specialbox
+                                        key={specinv.itemId}
+                                        onClick={() => handleItemClick(specinv)}
+                                        itemData={specinv}
+                                    />
+                                )
+                            })}
+                            <ItemboxModal
+                                isOpen={isOpen}
+                                setIsOpen={setIsOpen}
+                                item={selectedItem}
                             />
-                        </button>
-                        <CartDrawer />
+                        </div>
+                        <div>
+                            <button onClick={openDrawerOnMain}>
+                                <ShoppingCartIcon
+                                    className='size-8'
+                                    role="button"
+
+                                />
+                            </button>
+                            <CartDrawer />
+                        </div>
                     </div>
-                </div>
-            </section>
-        </body>
+                </section>
+            </body>
+        </div>
 
 
     )
