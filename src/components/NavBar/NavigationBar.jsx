@@ -23,6 +23,7 @@ export default function NavigationBar() {
     })
 
     return (
+
         <nav className="flex items-center justify-between flex-wrap bg-slate-700 p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-7 scale-125">
                 <PokeballIcon
@@ -39,11 +40,14 @@ export default function NavigationBar() {
                     </Link>
                     <Link to="/profile"
                         className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-300 mr-4">
+
                         Profile
                     </Link>
                     {adminStatus && (
                         <Link to="/admin"
+
                             className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-300 mr-4">
+      
                             Admin
                         </Link>
                     )}

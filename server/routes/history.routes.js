@@ -27,12 +27,15 @@ historyRouter.put('/:historyId', async (req, res) => {
     res.json(historyEntry);
 })
 
-// POST create new history line requiring userId, itemId, and Quantity
+// POST create new history line requiring userId, itemId, and Quantity //Must be an array of objects
 historyRouter.post('/new', async (req, res) => {
-    const { userId, itemId, shopperQuantity } = req.body;
-    const newHistory = await History.create({ userId, itemId, shopperQuantity });
+    const historyEntries = req.body;
+    const newHistories = await Promise.all(historyEntries.map(async (entry) => {
+        const { userId, itemId, shopperQuantity } = entry;
+        return await History.create({ userId, itemId, shopperQuantity });
+    }));
 
-    res.json(newHistory);
+    res.json(newHistories);
 })
 
 // DELETE delete history line by historyId

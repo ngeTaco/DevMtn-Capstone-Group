@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const initialState = {
-    allItems: [{ id: 0, name: "Cool Store Item" }],
+    allItems: [],
     cart: [],
     itemModal: false,
     modelContent: {},
@@ -11,7 +11,6 @@ const initialState = {
     cartDrawer: false,
     drawerContent: {}
 }
-/// {type:"UPDATE_CART", payload:cartItems} ///
 
 export function getAllItems(dispatch) {
     axios.get('/api/all/inventory').then(({ data }) => {
@@ -22,11 +21,34 @@ export function getAllItems(dispatch) {
     })
 }
 
+export const updateRegInventory = (inventory) => ({
+    type: 'UPDATE_REG_INVENTORY',
+    payload: inventory
+});
+
+export const updateSpecInventory = (inventory) => ({
+    type: 'UPDATE_SPEC_INVENTORY',
+    payload: inventory
+});
+
 export default function globalReducer(state = initialState, action) {
-    //console.log(action)
-    //console.log(state)
 
     switch (action.type) {
+        case "ADD_ITEM":
+            return {
+                ...state,
+                allItems: [...state.allItems, action.payload]
+            }
+
+        case "DELETE_ITEM":
+            const updatedAllItems = [...state.allItems]
+            const index = updatedAllItems.findIndex((item) => item.itemId === action.payload) 
+            updatedAllItems.splice(index, 1)
+            return {
+                ...state, 
+                allItems: updatedAllItems
+            }
+
         case "UPDATE_CART":
             return {
                 ...state,
@@ -39,17 +61,29 @@ export default function globalReducer(state = initialState, action) {
                 allItems: action.payload
             }
 
-            case "SET_REGULAR_ITEMS":
-                return {
-                    ...state,
-                    regInventory: action.payload
-                }
+        case "SET_REGULAR_ITEMS":
+            return {
+                ...state,
+                regInventory: action.payload
+            }
 
-            case "SET_SPECIAL_ITEM":
-                    return {
-                        ...state,
-                        specInventory: [action.payload]
-                    }
+        case "SET_SPECIAL_ITEM":
+            return {
+                ...state,
+                specInventory: [action.payload]
+            }
+
+        case 'UPDATE_REG_INVENTORY':
+            return {
+                ...state,
+                regInventory: action.payload
+            };
+
+        case 'UPDATE_SPEC_INVENTORY':
+            return {
+                ...state,
+                specInventory: action.payload
+            };
 
         case "SET_USER":
             return {
@@ -70,20 +104,17 @@ export default function globalReducer(state = initialState, action) {
             }
 
         case "HANDLE_MODAL":
-            console.log(action.payload)
             return {
                 ...state,
                 itemModal: action.payload
             }
         case "HANDLE_SPECIAL_MODAL":
-            console.log(action.payload)
             return {
                 ...state,
                 itemModal: action.payload
 
             }
         case "HANDLE_DRAWER":
-            console.log(action.payload)
             return {
                 ...state,
                 cartDrawer: action.payload

@@ -1,7 +1,8 @@
 import AdminInventoryRow from "./AdminInventoryRow"
+import { useState } from "react";
 
-function AdminInventoryTable(props) {
-    console.log(props.allItems)
+function AdminInventoryTable(props, { initialInventoryList }) {
+    
     return (
         <div>
         <div className="overflow-x-auto bg-white mx-10 my-16 shadow-sm rounded-lg">
@@ -20,7 +21,6 @@ function AdminInventoryTable(props) {
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
                 {props.allItems.map( (item)=> {
-                    console.log(item)
                     return (
                         <AdminInventoryRow 
                         item={item}

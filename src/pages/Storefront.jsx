@@ -16,30 +16,6 @@ function Storefront() {
 
     const dispatch = useDispatch()
 
-    const userInfo = useSelector((state) => {
-        return state.globalState.userProfile
-    })
-
-    // This is to fetch user history when shopper logs in. Since shoppers are navigated here first, it made sense to put here instead of profile page
-    useEffect(() => {
-        async function fetchUserHistory() {
-            try {
-                const response = await axios.get(`/api/history/${userInfo.userId}`);
-                const userHistory = response.data;
-
-                dispatch({
-                    type: 'SET_USER_HISTORY',
-                    payload: userHistory
-                });
-            } catch (error) {
-                console.error("Error fetching user history:", error);
-            }
-        }
-        if (userInfo.userId) {
-            fetchUserHistory();
-        }
-    }, [userInfo.userId, dispatch])
-
     // This is to fetch regular inventory for the shopping page
     useEffect(() => {
         async function fetchRegularInventory() {
@@ -92,12 +68,10 @@ function Storefront() {
 
     //Event handler for sending props to modal
     function handleItemClick(item) {
-        console.log("Item clicked:", item);
         setSelectedItem(item);
     }
 
     //TODO : add ability to update quanity in textbox + update quanity in general
-    //TODO : "Buy Now" subtracts points from user + subtract item from inventory + add item to history
 
     function addToCartDrawer() {
 
