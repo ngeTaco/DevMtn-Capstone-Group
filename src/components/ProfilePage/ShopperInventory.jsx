@@ -4,7 +4,7 @@ import ShopperInventoryRow from "./ShopperInventoryRow.jsx";
 function ShopperInventory() {
 
     const userHistory = useSelector((state) => 
-        state.globalState.userHistory) || [];
+        state.profileState.userHistory) || [];
 
     return (
         <>
@@ -17,6 +17,9 @@ function ShopperInventory() {
                         </div>
                     </div>
                     <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                        <p className="text-sm font-semibold leading-6 text-gray-900 pr-5">Description</p>
+                    </div>
+                    <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                         <p className="text-sm font-semibold leading-6 text-gray-900">Quantity</p>
                     </div>
                 </li>
@@ -25,6 +28,7 @@ function ShopperInventory() {
                 <ShopperInventoryRow
                 key={history.historyId}
                 itemName={history.inventory.itemName}
+                itemDescription={history.inventory.itemDescription}
                 shopperQuantity={history.shopperQuantity}
                 />
                 )

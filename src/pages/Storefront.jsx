@@ -54,9 +54,9 @@ function Storefront() {
 
     //These are to get the inventory items from redux on page load with an empty array in case of failure
     const regInventory = useSelector((state) =>
-        state.globalState.regInventory || []);
+        state.inventoryState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory || []);
+        state.inventoryState.specInventory || []);
 
 
     function openDrawerOnMain() {
@@ -71,21 +71,19 @@ function Storefront() {
         setSelectedItem(item);
     }
 
-    //TODO : add ability to update quanity in textbox + update quanity in general
+    const loginStatus = useSelector((state) => {
+        return state.profileState.userProfile
+    })
 
-    function addToCartDrawer() {
-
-    }
+    if (!loginStatus || Object.keys(loginStatus).length === 0) return null;
 
     return (
-            <div>
-                <section className="">
-                    <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
+        <body>
+            <section className="">
+                <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
 
-                        <div className="relative flex py-5">
-                            <div className="flex-grow border-t-2 border-red-600"></div>
-                        </div>
-
+                    <div>
+                        <h1 className="text-2xl font-bold">Regular Items</h1>
                         <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">
                             {/* Regular Inventory */}
                             {regInventory.map((reginv) => {
@@ -97,9 +95,12 @@ function Storefront() {
                                     />
                                 )
                             })}
-                            {/* Special Item */}
                         </div>
-                        <div className="mt-44 gap-x-12">
+                    </div>
+                    {/* Special Item */}
+                    <div>
+                        <h1 className=" text-2xl font-bold gap-x-12 ml-7 ">Special</h1>
+                        <div className="gap-x-12">
                             {specInventory.map((specinv) => {
                                 return (
                                     <Specialbox
@@ -115,11 +116,12 @@ function Storefront() {
                                 item={selectedItem}
                             />
                         </div>
-                        <div>
-                            <button onClick={openDrawerOnMain}>
-                                <ShoppingCartIcon
-                                    className='size-8'
-                                    role="button"
+                    </div>
+                    <div>
+                        <button onClick={openDrawerOnMain}>
+                            <ShoppingCartIcon
+                                className='size-8'
+                                role="button"
 
                                 />
                             </button>

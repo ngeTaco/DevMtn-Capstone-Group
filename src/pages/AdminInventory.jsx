@@ -1,15 +1,15 @@
-import AdminInventoryRow from "./components/AdminInventoryPage/AdminInventoryRow.jsx";
-import AdminInventoryTable from "./components/AdminInventoryPage/AdminInventoryTable.jsx";
+import AdminInventoryRow from "../components/AdminInventoryPage/AdminInventoryRow.jsx";
+import AdminInventoryTable from "../components/AdminInventoryPage/AdminInventoryTable.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AdminInventoryAddItem from "./components/AdminInventoryPage/AdminInventoryAddItem.jsx";
+import AdminInventoryAddItem from "../components/AdminInventoryPage/AdminInventoryAddItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllItems } from "./store/globalReducer.js"
+import { getAllItems } from "../store/globalReducer.js"
 
 function AdminInventory() {
   const dispatch = useDispatch()
 
-  const allInventoryItems = useSelector((state) => state.globalState.allItems)
+  const allInventoryItems = useSelector((state) => state.inventoryState.allItems)
 
   useEffect(() => {
     dispatch(getAllItems)
@@ -17,7 +17,7 @@ function AdminInventory() {
     []
   )
   const adminStatus = useSelector((state) => {
-    return state.globalState.isAdmin
+    return state.profileState.isAdmin
   })
 
   if (!adminStatus) return null;

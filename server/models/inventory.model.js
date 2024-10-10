@@ -33,7 +33,7 @@ Inventory.init(
         imageUrl: {
             type: DataTypes.STRING,
             allowNull: true,
-            defaultValue: "public/mysterygift.png" 
+            defaultValue: "/mysterygift.png" 
         },
         quantity: {
             type: DataTypes.INTEGER,

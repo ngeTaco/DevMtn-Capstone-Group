@@ -3,23 +3,27 @@ import LogoutButton from "./LogoutButton.jsx"
 import { Link } from "react-router-dom"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function NavigationBar() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleLogout = async (e) => {
         e.preventDefault();
-        localStorage.removeItem('userdata');
+        navigate('/');
         const res = await axios.post('/api/auth/logout');
         if (res.data.success) {
-            navigate('/');
+            localStorage.removeItem('userdata');
+            dispatch({
+                type: 'RESET_USER'
+            })
         }
     };
 
     const adminStatus = useSelector((state) => {
-        return state.globalState.isAdmin
+        return state.profileState.isAdmin
     })
 
     return (
@@ -27,7 +31,7 @@ export default function NavigationBar() {
         <nav className="flex items-center justify-between flex-wrap bg-slate-700 p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-7 scale-125">
                 <PokeballIcon
-                className='size-8' />
+                    className='size-8' />
                 <span className="font-semibold text-xl tracking-tight">
                     PokéShop
                 </span>
@@ -47,7 +51,7 @@ export default function NavigationBar() {
                         <Link to="/admin"
 
                             className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-sky-300 mr-4">
-      
+
                             Admin
                         </Link>
                     )}

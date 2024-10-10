@@ -2,151 +2,151 @@
     {
         "userId": 3,
         "itemId": 1,
-        "shopperQuantity": 500
+        "shopperQuantity": 50
     },
     {
         "userId": 4,
         "itemId": 2,
-        "shopperQuantity": 300
+        "shopperQuantity": 30
     },
     {
         "userId": 5,
         "itemId": 3,
-        "shopperQuantity": 200
+        "shopperQuantity": 20
     },
     {
         "userId": 6,
         "itemId": 4,
-        "shopperQuantity": 100
+        "shopperQuantity": 1
     },
     {
         "userId": 3,
         "itemId": 5,
-        "shopperQuantity": 1000
+        "shopperQuantity": 100
     },
     {
         "userId": 4,
         "itemId": 6,
-        "shopperQuantity": 800
+        "shopperQuantity": 80
     },
     {
         "userId": 5,
         "itemId": 7,
-        "shopperQuantity": 600
+        "shopperQuantity": 60
     },
     {
         "userId": 6,
         "itemId": 8,
-        "shopperQuantity": 400
+        "shopperQuantity": 40
     },
     {
         "userId": 3,
         "itemId": 9,
-        "shopperQuantity": 200
+        "shopperQuantity": 20
     },
     {
         "userId": 4,
         "itemId": 10,
-        "shopperQuantity": 100
+        "shopperQuantity": 10
     },
     {
         "userId": 5,
         "itemId": 11,
-        "shopperQuantity": 500
+        "shopperQuantity": 50
     },
     {
         "userId": 6,
         "itemId": 12,
-        "shopperQuantity": 400
+        "shopperQuantity": 40
     },
     {
         "userId": 3,
         "itemId": 13,
-        "shopperQuantity": 300
+        "shopperQuantity": 30
     },
     {
         "userId": 4,
         "itemId": 14,
-        "shopperQuantity": 200
+        "shopperQuantity": 20
     },
     {
         "userId": 5,
         "itemId": 1,
-        "shopperQuantity": 300
+        "shopperQuantity": 30
     },
     {
         "userId": 6,
         "itemId": 2,
-        "shopperQuantity": 400
+        "shopperQuantity": 40
     },
     {
         "userId": 3,
         "itemId": 3,
-        "shopperQuantity": 500
+        "shopperQuantity": 50
     },
     {
         "userId": 4,
         "itemId": 4,
-        "shopperQuantity": 600
+        "shopperQuantity": 6
     },
     {
         "userId": 5,
         "itemId": 5,
-        "shopperQuantity": 700
+        "shopperQuantity": 70
     },
     {
         "userId": 6,
         "itemId": 6,
-        "shopperQuantity": 800
+        "shopperQuantity": 80
     },
     {
         "userId": 3,
         "itemId": 7,
-        "shopperQuantity": 500
+        "shopperQuantity": 50
     },
     {
         "userId": 4,
         "itemId": 8,
-        "shopperQuantity": 300
+        "shopperQuantity": 30
     },
     {
         "userId": 5,
         "itemId": 9,
-        "shopperQuantity": 200
+        "shopperQuantity": 20
     },
     {
         "userId": 6,
         "itemId": 10,
-        "shopperQuantity": 100
+        "shopperQuantity": 10
     },
     {
         "userId": 3,
         "itemId": 11,
-        "shopperQuantity": 1000
+        "shopperQuantity": 100
     },
     {
         "userId": 4,
         "itemId": 12,
-        "shopperQuantity": 800
+        "shopperQuantity": 80
     },
     {
         "userId": 5,
         "itemId": 13,
-        "shopperQuantity": 600
+        "shopperQuantity": 60
     },
     {
         "userId": 6,
         "itemId": 14,
-        "shopperQuantity": 400
+        "shopperQuantity": 40
     },
     {
         "userId": 3,
         "itemId": 1,
-        "shopperQuantity": 200
+        "shopperQuantity": 20
     },
     {
         "userId": 4,
         "itemId": 2,
-        "shopperQuantity": 100
+        "shopperQuantity": 10
     }
 ]

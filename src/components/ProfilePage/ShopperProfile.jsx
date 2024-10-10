@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 function ShopperProfile() {
 
     const userInfo = useSelector((state) => {
-        return state.globalState.userProfile
+        return state.profileState.userProfile
     })
 
 
