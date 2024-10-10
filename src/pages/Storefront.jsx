@@ -78,8 +78,7 @@ function Storefront() {
     }
 
     return (
-        <div>
-            <body>
+            <div>
                 <section className="">
                     <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
 
@@ -128,10 +127,7 @@ function Storefront() {
                         </div>
                     </div>
                 </section>
-            </body>
-        </div>
-
-
+            </div>
     )
 }
 
