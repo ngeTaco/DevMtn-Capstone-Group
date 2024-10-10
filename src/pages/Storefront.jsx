@@ -54,9 +54,9 @@ function Storefront() {
 
     //These are to get the inventory items from redux on page load with an empty array in case of failure
     const regInventory = useSelector((state) =>
-        state.globalState.regInventory || []);
+        state.inventoryState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory || []) ;
+        state.inventoryState.specInventory || []);
 
 
     function openDrawerOnMain() {
@@ -71,17 +71,17 @@ function Storefront() {
         setSelectedItem(item);
     }
 
-    //TODO : add ability to update quanity in textbox + update quanity in general
+    const loginStatus = useSelector((state) => {
+        return state.profileState.userProfile
+    })
 
-    function addToCartDrawer() {
-
-    }
+    if (!loginStatus || Object.keys(loginStatus).length === 0) return null;
 
     return (
         <body>
             <section className="">
                 <div className="mx-auto flex max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 className=bg-gray-200">
-            
+
                     <div>
                         <h1 className="text-2xl font-bold">Regular Items</h1>
                         <div className="mt-10 grid gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ">

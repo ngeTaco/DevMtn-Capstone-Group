@@ -13,11 +13,11 @@ function CartDrawer() {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.cartItems);
     const drawer = useSelector((accessState) => accessState.globalState.cartDrawer);
-    const initialUserInfo = useSelector((state) => { return state.globalState.userProfile });
+    const initialUserInfo = useSelector((state) => { return state.profileState.userProfile });
     const [userInfo, setUserInfo] = useState(initialUserInfo);
     const totalPrice = Math.round(cartTotal(cartItems));
-    const regInventory = useSelector((state) => state.globalState.regInventory || []);
-    const specInventory = useSelector((state) => state.globalState.specInventory || []);
+    const regInventory = useSelector((state) => state.inventoryState.regInventory || []);
+    const specInventory = useSelector((state) => state.inventoryState.specInventory || []);
 
     const closeDrawer = () => {
         dispatch({

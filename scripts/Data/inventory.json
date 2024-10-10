@@ -4,7 +4,7 @@
         "itemDescription": "A tool used for catching wild POKéMON.",
         "itemPrice": 200,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png",
-        "quantity": "200",
+        "quantity": "100",
         "isSpecialItem": false
     },
     {
@@ -12,7 +12,7 @@
         "itemDescription": "A high-performance POKé BALL that provides a higher catch rate than a standard POKé BALL.",
         "itemPrice": 600,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png",
-        "quantity": "150",
+        "quantity": "50",
         "isSpecialItem": false
     },
     {
@@ -20,7 +20,7 @@
         "itemDescription": "An ultra-high-performance POKé BALL that provides a higher catch rate than a GREAT BALL.",
         "itemPrice": 1200,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png",
-        "quantity": "100",
+        "quantity": "25",
         "isSpecialItem": false
     },
     {
@@ -44,7 +44,7 @@
         "itemDescription": "A spray-type medicine for treating wounds. It restores the HP of one POKéMON by 50 points.",
         "itemPrice": 700,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/super-potion.png",
-        "quantity": "30",
+        "quantity": "25",
         "isSpecialItem": false
     },
     {
@@ -52,7 +52,7 @@
         "itemDescription": "A spray-type medicine for treating wounds. It restores the HP of one POKéMON by 200 points.",
         "itemPrice": 1200,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hyper-potion.png",
-        "quantity": "20",
+        "quantity": "10",
         "isSpecialItem": false
     },
     {
@@ -60,7 +60,7 @@
         "itemDescription": "A spray-type medicine for treating wounds. It completely restores the HP of one POKéMON.",
         "itemPrice": 2500,
         "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/max-potion.png",
-        "quantity": "10",
+        "quantity": "5",
         "isSpecialItem": false
     },
     {
