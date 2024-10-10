@@ -54,9 +54,9 @@ function Storefront() {
 
     //These are to get the inventory items from redux on page load with an empty array in case of failure
     const regInventory = useSelector((state) =>
-        state.globalState.regInventory || []);
+        state.inventoryState.regInventory || []);
     const specInventory = useSelector((state) =>
-        state.globalState.specInventory || []);
+        state.inventoryState.specInventory || []);
 
 
     function openDrawerOnMain() {
@@ -72,7 +72,7 @@ function Storefront() {
     }
 
     const loginStatus = useSelector((state) => {
-        return state.globalState.userProfile
+        return state.profileState.userProfile
     })
 
     if (!loginStatus || Object.keys(loginStatus).length === 0) return null;

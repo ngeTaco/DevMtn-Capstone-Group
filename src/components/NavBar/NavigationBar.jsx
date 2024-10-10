@@ -23,7 +23,7 @@ export default function NavigationBar() {
     };
 
     const adminStatus = useSelector((state) => {
-        return state.globalState.isAdmin
+        return state.profileState.isAdmin
     })
 
     return (

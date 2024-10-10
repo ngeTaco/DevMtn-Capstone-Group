@@ -9,7 +9,7 @@ import { getAllItems } from "../store/globalReducer.js"
 function AdminInventory() {
   const dispatch = useDispatch()
 
-  const allInventoryItems = useSelector((state) => state.globalState.allItems)
+  const allInventoryItems = useSelector((state) => state.inventoryState.allItems)
 
   useEffect(() => {
     dispatch(getAllItems)
@@ -17,7 +17,7 @@ function AdminInventory() {
     []
   )
   const adminStatus = useSelector((state) => {
-    return state.globalState.isAdmin
+    return state.profileState.isAdmin
   })
 
   if (!adminStatus) return null;

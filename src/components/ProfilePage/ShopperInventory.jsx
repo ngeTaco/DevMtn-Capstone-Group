@@ -4,7 +4,7 @@ import ShopperInventoryRow from "./ShopperInventoryRow.jsx";
 function ShopperInventory() {
 
     const userHistory = useSelector((state) => 
-        state.globalState.userHistory) || [];
+        state.profileState.userHistory) || [];
 
     return (
         <>

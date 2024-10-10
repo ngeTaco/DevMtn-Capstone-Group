@@ -11,7 +11,7 @@ function ProfilePage() {
 
     // fetch user history when shopper navigates to profile page
     const userInfo = useSelector((state) => {
-        return state.globalState.userProfile
+        return state.profileState.userProfile
     })
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function ProfilePage() {
         }
     }, [userInfo.userId, dispatch])
 
-    
+
     const addPoints = async () => {
         const updatedPoints = userInfo.points + 10000;
 
@@ -52,7 +52,7 @@ function ProfilePage() {
     };
 
     const loginStatus = useSelector((state) => {
-        return state.globalState.userProfile
+        return state.profileState.userProfile
     })
 
     if (!loginStatus || Object.keys(loginStatus).length === 0) return null;
